@@ -10,6 +10,25 @@ export const translations = {
       login: "Login",
       logout: "Logout",
     },
+    about: {
+  label: "ABOUT HEDEF ENGLISH",
+  title: "Learn English with Confidence.",
+  description:
+    "Hedef English is a modern English learning platform designed to help learners improve their English through clear lessons, practical communication, and personalized learning.",
+  missionTitle: "Our Mission",
+  missionDescription:
+    "Our goal is to make learning English simple, practical, and accessible for learners at different levels.",
+  approachTitle: "Our Approach",
+  approachDescription:
+    "We focus on real communication, useful vocabulary, grammar, speaking skills, and structured learning.",
+  progressTitle: "Your Progress",
+  progressDescription:
+    "Start with a level test, discover your English level, and continue your learning journey with the right resources.",
+  ctaTitle: "Ready to improve your English?",
+  ctaDescription:
+    "Take our free level test and find out where you should start.",
+  ctaButton: "Take the Free Level Test",
+},
 
     hero: {
       eyebrow: "HEDEF ENGLISH",
@@ -189,6 +208,25 @@ export const translations = {
       login: "Giriş Yap",
       logout: "Çıkış Yap",
     },
+    about: {
+  label: "HEDEF ENGLISH HAKKINDA",
+  title: "İngilizceyi Özgüvenle Öğrenin.",
+  description:
+    "Hedef English, öğrencilerin İngilizcelerini geliştirmelerine; anlaşılır dersler, pratik iletişim ve kişiselleştirilmiş öğrenme ile yardımcı olmak için tasarlanmış modern bir İngilizce öğrenme platformudur.",
+  missionTitle: "Misyonumuz",
+  missionDescription:
+    "Amacımız, İngilizce öğrenmeyi farklı seviyelerdeki öğrenciler için kolay, pratik ve erişilebilir hale getirmektir.",
+  approachTitle: "Yaklaşımımız",
+  approachDescription:
+    "Gerçek iletişim, faydalı kelime bilgisi, dil bilgisi, konuşma becerileri ve planlı öğrenmeye odaklanıyoruz.",
+  progressTitle: "Gelişiminiz",
+  progressDescription:
+    "Seviye testiyle başlayın, İngilizce seviyenizi keşfedin ve doğru kaynaklarla öğrenme yolculuğunuza devam edin.",
+  ctaTitle: "İngilizcenizi geliştirmeye hazır mısınız?",
+  ctaDescription:
+    "Ücretsiz seviye testimizi çözün ve nereden başlamanız gerektiğini öğrenin.",
+  ctaButton: "Ücretsiz Seviye Testini Çöz",
+},
 
     hero: {
       eyebrow: "HEDEF ENGLISH",
@@ -368,7 +406,25 @@ export const translations = {
       login: "ورود",
       logout: "خروج",
     },
-
+about: {
+  label: "درباره HEDEF ENGLISH",
+  title: "با اعتمادبه‌نفس انگلیسی یاد بگیرید.",
+  description:
+    "Hedef English یک پلتفرم مدرن آموزش زبان انگلیسی است که به زبان‌آموزان کمک می‌کند با درس‌های واضح، ارتباط کاربردی و یادگیری شخصی‌سازی‌شده، زبان انگلیسی خود را تقویت کنند.",
+  missionTitle: "ماموریت ما",
+  missionDescription:
+    "هدف ما این است که یادگیری زبان انگلیسی را برای زبان‌آموزان در سطوح مختلف، ساده، کاربردی و در دسترس کنیم.",
+  approachTitle: "رویکرد ما",
+  approachDescription:
+    "ما بر ارتباط واقعی، واژگان کاربردی، گرامر، مهارت مکالمه و یادگیری ساختاریافته تمرکز می‌کنیم.",
+  progressTitle: "پیشرفت شما",
+  progressDescription:
+    "با آزمون تعیین سطح شروع کنید، سطح انگلیسی خود را بشناسید و با منابع مناسب به مسیر یادگیری خود ادامه دهید.",
+  ctaTitle: "آماده‌اید انگلیسی خود را بهتر کنید؟",
+  ctaDescription:
+    "در آزمون رایگان تعیین سطح شرکت کنید و ببینید بهتر است از کجا شروع کنید.",
+  ctaButton: "آزمون رایگان تعیین سطح",
+},
     hero: {
       eyebrow: "HEDEF ENGLISH",
       title: "انگلیسی یاد بگیرید. با اعتمادبه‌نفس صحبت کنید.",
