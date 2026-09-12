@@ -1,3 +1,4 @@
+import BackToCourses from "@/app/components/BackToCourses";
 export default function GeneralEnglishB2() {
   const lessons = [
     "Lesson 1 — Advanced Tenses Review",
@@ -34,12 +35,14 @@ export default function GeneralEnglishB2() {
         padding: "80px 20px",
       }}
     >
+
       <div
         style={{
           maxWidth: "900px",
           margin: "0 auto",
         }}
       >
+        <BackToCourses />
         <div
           style={{
             textAlign: "center",

@@ -1,3 +1,4 @@
+import BackToCourses from "@/app/components/BackToCourses";
 export default function GeneralEnglishA1() {
   const lessons = [
     "Lesson 1 — Greetings & Introductions",
@@ -28,6 +29,7 @@ export default function GeneralEnglishA1() {
           margin: "0 auto",
         }}
       >
+        <BackToCourses />
         <div
           style={{
             textAlign: "center",

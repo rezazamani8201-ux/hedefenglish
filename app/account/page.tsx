@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/app/context/AuthContext";
 import { supabase } from "@/app/lib/supabase";
+import BackToHome from "@/app/components/BackToHome";
 
 export default function AccountPage() {
   const { user, loading, logout } = useAuth();
@@ -120,27 +121,40 @@ setCourses(courseData || []);
           margin: "0 auto",
         }}
       >
-        <div style={{ marginBottom: "35px" }}>
-          <h1
-            style={{
-              margin: 0,
-              color: "#173b78",
-              fontSize: "36px",
-            }}
-          >
-            My Account
-          </h1>
+        <div
+  style={{
+    marginBottom: "35px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "20px",
+    flexWrap: "wrap",
+  }}
+>
+  <div>
+    <h1
+      style={{
+        margin: 0,
+        color: "#173b78",
+        fontSize: "36px",
+      }}
+    >
+      My Account
+    </h1>
 
-          <p
-            style={{
-              marginTop: "10px",
-              color: "#666",
-              fontSize: "16px",
-            }}
-          >
-            Welcome back, {name}!
-          </p>
-        </div>
+    <p
+      style={{
+        marginTop: "10px",
+        color: "#666",
+        fontSize: "16px",
+      }}
+    >
+      Welcome back, {name}!
+    </p>
+  </div>
+
+  <BackToHome />
+</div>
 
         <div
           style={{

@@ -1,3 +1,4 @@
+import BackToCourses from "@/app/components/BackToCourses";
 export default function GeneralEnglishA2() {
   const lessons = [
     "Lesson 1 — Present & Past Simple",
@@ -32,6 +33,7 @@ export default function GeneralEnglishA2() {
           margin: "0 auto",
         }}
       >
+        <BackToCourses />
         <div
           style={{
             textAlign: "center",

@@ -69,7 +69,7 @@ export default function RegisterPage() {
         }}
       >
         <div style={{ textAlign: "center", marginBottom: "30px" }}>
-          <h1
+  <h1
             style={{
               margin: 0,
               color: "#173b78",

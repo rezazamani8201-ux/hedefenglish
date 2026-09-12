@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import BackToHome from "@/app/components/BackToHome";
 export default function CoursesPage() {
   const courses = [
     {
@@ -50,6 +50,7 @@ export default function CoursesPage() {
           margin: "0 auto",
         }}
       >
+        <BackToHome />
         <div
           style={{
             textAlign: "center",

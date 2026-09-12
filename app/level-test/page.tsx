@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import BackToHome from "@/app/components/BackToHome";
 
 const questions = [
   {
@@ -235,6 +236,7 @@ export default function LevelTestPage() {
     return (
       <main className="level-test-page">
         <div className="level-test-container">
+          <BackToHome />
           <span className="section-label">HEDEF ENGLISH</span>
 
           <h1>Find Your English Level</h1>

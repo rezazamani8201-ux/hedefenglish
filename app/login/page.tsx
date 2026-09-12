@@ -1,7 +1,7 @@
 "use client";
-
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
+
 import { supabase } from "@/app/lib/supabase";
 
 export default function LoginPage() {
@@ -59,7 +59,21 @@ export default function LoginPage() {
         }}
       >
         <div style={{ textAlign: "center", marginBottom: "30px" }}>
-          <h1
+  <div style={{ marginBottom: "20px" }}>
+    <Link
+      href="/"
+      style={{
+        color: "#173b78",
+        textDecoration: "none",
+        fontSize: "14px",
+        fontWeight: 600,
+      }}
+    >
+      ← Back to Home
+    </Link>
+  </div>
+
+  <h1
             style={{
               margin: 0,
               color: "#173b78",
