@@ -24,7 +24,7 @@ export default function Home() {
 
         <div className="nav-links">
           <a href="#home">{t.nav.home}</a>
-
+          <a href="/about">{t.about.label}</a>
           <a href="#level-test">{t.nav.levelTest}</a>
 
           <a href="#courses">{t.nav.courses}</a>
