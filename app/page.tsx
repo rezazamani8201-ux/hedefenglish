@@ -22,19 +22,32 @@ export default function Home() {
           Hedef <span>English</span>
         </div>
 
-        <div className="nav-links">
-          <a href="#home">{t.nav.home}</a>
-          <a href="/about">{t.about.label}</a>
-          <a href="#level-test">{t.nav.levelTest}</a>
+        <div
+  className="nav-links"
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "18px",
+    whiteSpace: "nowrap",
+    flex: "1",
+    justifyContent: "center",
+    minWidth: 0,
+  }}
+>
+  <a href="#home">{t.nav.home}</a>
+  <a href="/about">{t.about.label}</a>
+  <a href="#level-test">{t.nav.levelTest}</a>
+  <a href="#courses">{t.nav.courses}</a>
+  <a href="#private-lessons">{t.nav.privateLessons}</a>
 
-          <a href="#courses">{t.nav.courses}</a>
+  <Link href="/resources">
+    {t.nav.resources}
+  </Link>
 
-          <a href="#private-lessons">{t.nav.privateLessons}</a>
-
-         <Link href="/resources">
-  {t.nav.resources}
-</Link>
-        </div>
+  <Link href="#english-tools">
+    English Tools
+  </Link>
+</div>
 
         {user ? (
           <div
@@ -656,6 +669,200 @@ export default function Home() {
     RESOURCES
     
 ========================== */}
+{/* ENGLISH TOOLS */}
+<section
+  id="english-tools"
+  style={{
+    padding: "100px 6%",
+    background: "#ffffff",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "1200px",
+      margin: "0 auto",
+    }}
+  >
+    {/* Heading */}
+    <div
+      style={{
+        textAlign: "center",
+        marginBottom: "50px",
+      }}
+    >
+      <h2
+        style={{
+          margin: 0,
+          fontSize: "42px",
+          lineHeight: 1.2,
+          color: "#111827",
+          fontWeight: 700,
+        }}
+      >
+        English Tools
+      </h2>
+
+      <p
+        style={{
+          margin: "16px auto 0",
+          maxWidth: "650px",
+          color: "#6b7280",
+          fontSize: "17px",
+          lineHeight: 1.7,
+        }}
+      >
+        Practice English with simple and useful interactive tools.
+      </p>
+    </div>
+
+    {/* Tools */}
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(2, 1fr)",
+        gap: "24px",
+        maxWidth: "800px",
+        margin: "0 auto",
+      }}
+    >
+      {/* Stative Verbs */}
+      <Link
+        href="/toolkit/stative-verbs"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          background: "#f8fafc",
+          border: "1px solid #e5e7eb",
+          borderRadius: "20px",
+          padding: "35px",
+          minHeight: "260px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              width: "56px",
+              height: "56px",
+              borderRadius: "15px",
+              background: "#eff6ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "27px",
+              marginBottom: "22px",
+            }}
+          >
+            📘
+          </div>
+
+          <h3
+            style={{
+              margin: "0 0 12px",
+              fontSize: "23px",
+              color: "#111827",
+            }}
+          >
+            Stative Verbs
+          </h3>
+
+          <p
+            style={{
+              margin: 0,
+              color: "#6b7280",
+              lineHeight: 1.6,
+              fontSize: "15px",
+            }}
+          >
+            Learn and practice stative verbs with clear examples
+            and interactive exercises.
+          </p>
+        </div>
+
+        <span
+          style={{
+            marginTop: "25px",
+            color: "#2563eb",
+            fontWeight: 600,
+          }}
+        >
+          Practice Stative Verbs →
+        </span>
+      </Link>
+
+      {/* Irregular Verbs */}
+      <Link
+        href="/toolkit/irregular-verbs"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          background: "#f8fafc",
+          border: "1px solid #e5e7eb",
+          borderRadius: "20px",
+          padding: "35px",
+          minHeight: "260px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              width: "56px",
+              height: "56px",
+              borderRadius: "15px",
+              background: "#eff6ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "27px",
+              marginBottom: "22px",
+            }}
+          >
+            🔤
+          </div>
+
+          <h3
+            style={{
+              margin: "0 0 12px",
+              fontSize: "23px",
+              color: "#111827",
+            }}
+          >
+            Irregular Verbs
+          </h3>
+
+          <p
+            style={{
+              margin: 0,
+              color: "#6b7280",
+              lineHeight: 1.6,
+              fontSize: "15px",
+            }}
+          >
+            Practice common irregular verbs and master their
+            different forms.
+          </p>
+        </div>
+
+        <span
+          style={{
+            marginTop: "25px",
+            color: "#2563eb",
+            fontWeight: 600,
+          }}
+        >
+          Practice Irregular Verbs →
+        </span>
+      </Link>
+    </div>
+  </div>
+</section>
 {user && (
 <section
   id="resources"
@@ -742,7 +949,7 @@ export default function Home() {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
+        gridTemplateColumns: "repeat(3, 1fr)",
         gap: "22px",
       }}
     >
@@ -950,75 +1157,9 @@ export default function Home() {
         </span>
       </Link>
 
-      {/* English Tools */}
-      <Link
-        href="/toolkit"
-        style={{
-          textDecoration: "none",
-          color: "inherit",
-          background: "#ffffff",
-          border: "1px solid #e5e7eb",
-          borderRadius: "20px",
-          padding: "30px",
-          minHeight: "250px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
-        }}
-      >
-        <div>
-          <div
-            style={{
-              width: "52px",
-              height: "52px",
-              borderRadius: "14px",
-              background: "#eff6ff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "25px",
-              marginBottom: "22px",
-            }}
-          >
-            🧰
-          </div>
 
-          <h3
-            style={{
-              margin: "0 0 12px",
-              fontSize: "21px",
-              color: "#111827",
-            }}
-          >
-            English Tools
-          </h3>
-
-          <p
-            style={{
-              margin: 0,
-              color: "#6b7280",
-              lineHeight: 1.6,
-              fontSize: "15px",
-            }}
-          >
-            Use practical English tools including irregular verbs,
-            stative verbs and more.
-          </p>
-        </div>
-
-        <span
-          style={{
-            marginTop: "25px",
-            color: "#2563eb",
-            fontWeight: 600,
-          }}
-        >
-          Open English Tools →
-        </span>
-      </Link>
-    </div>
   </div>
+</div>
 </section>
 )}
 
