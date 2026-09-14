@@ -13,15 +13,19 @@ export default function ProtectedRoute({
   const pathname = usePathname();
   const router = useRouter();
 
-  const publicPages = ["/", "/login", "/register"];
+  const isPublicPage =
+    pathname === "/" ||
+    pathname === "/login" ||
+    pathname === "/register" ||
+    pathname.startsWith("/resources");
 
   useEffect(() => {
-    if (!loading && !user && !publicPages.includes(pathname)) {
+    if (!loading && !user && !isPublicPage) {
       router.replace("/login");
     }
-  }, [user, loading, pathname, router]);
+  }, [user, loading, pathname, router, isPublicPage]);
 
-  if (!loading && !user && !publicPages.includes(pathname)) {
+  if (!loading && !user && !isPublicPage) {
     return null;
   }
 
