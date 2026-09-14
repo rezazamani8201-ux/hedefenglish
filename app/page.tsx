@@ -31,7 +31,7 @@ export default function Home() {
 
           <a href="#private-lessons">{t.nav.privateLessons}</a>
 
-          <a href="#resources">{t.nav.resources}</a>
+          <a href="/resources">{t.nav.resources}</a>
         </div>
 
         {user ? (
@@ -648,114 +648,375 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =========================
-          RESOURCES
-      ========================== */}
-      <section
-        className="resources-section"
-        id="resources"
+     {/* =========================
+    {/* =========================
+   {/* =========================
+    RESOURCES
+========================== */}
+
+<section
+  id="resources"
+  style={{
+    padding: "100px 6%",
+    background: "#f7f9fc",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "1200px",
+      margin: "0 auto",
+    }}
+  >
+    {/* Heading */}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "flex-end",
+        gap: "30px",
+        marginBottom: "50px",
+      }}
+    >
+      <div>
+        <p
+          style={{
+            margin: "0 0 12px",
+            fontSize: "13px",
+            fontWeight: 700,
+            letterSpacing: "2px",
+            color: "#2563eb",
+          }}
+        >
+          LEARN MORE WITH HEDEF ENGLISH
+        </p>
+
+        <h2
+          style={{
+            margin: 0,
+            fontSize: "42px",
+            lineHeight: 1.15,
+            color: "#111827",
+          }}
+        >
+          Learn More. Practice More.
+          <br />
+          Improve Faster.
+        </h2>
+
+        <p
+          style={{
+            marginTop: "18px",
+            maxWidth: "650px",
+            fontSize: "17px",
+            lineHeight: 1.7,
+            color: "#6b7280",
+          }}
+        >
+          Explore free English resources, grammar lessons,
+          vocabulary practice, listening activities and useful
+          learning tools designed to help you improve your English.
+        </p>
+      </div>
+
+      <Link
+        href="/resources"
+        style={{
+          flexShrink: 0,
+          padding: "14px 24px",
+          borderRadius: "12px",
+          background: "#2563eb",
+          color: "#fff",
+          textDecoration: "none",
+          fontWeight: 600,
+          whiteSpace: "nowrap",
+        }}
       >
-        <div className="resources-heading">
-          <div>
-            <p className="section-label">
-              {t.resources.label}
-            </p>
+        View All Resources →
+      </Link>
+    </div>
 
-            <h2>{t.resources.title}</h2>
-
-            <p>{t.resources.description}</p>
-          </div>
-
-          <a
-            href="#resources"
-            className="resources-link"
+    {/* Resource Cards */}
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gap: "22px",
+      }}
+    >
+      {/* Grammar */}
+      <Link
+        href="/resources"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          background: "#ffffff",
+          border: "1px solid #e5e7eb",
+          borderRadius: "20px",
+          padding: "30px",
+          minHeight: "250px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              width: "52px",
+              height: "52px",
+              borderRadius: "14px",
+              background: "#eff6ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "25px",
+              marginBottom: "22px",
+            }}
           >
-            {t.resources.viewAll} →
-          </a>
+            📘
+          </div>
+
+          <h3
+            style={{
+              margin: "0 0 12px",
+              fontSize: "21px",
+              color: "#111827",
+            }}
+          >
+            Grammar & Vocabulary
+          </h3>
+
+          <p
+            style={{
+              margin: 0,
+              color: "#6b7280",
+              lineHeight: 1.6,
+              fontSize: "15px",
+            }}
+          >
+            Improve your grammar and build a stronger English
+            vocabulary with useful learning resources.
+          </p>
         </div>
 
-        <div className="resource-cards">
-          {/* RESOURCE 1 */}
-          <div className="resource-card">
-            <div className="resource-icon">
-              📘
-            </div>
+        <span
+          style={{
+            marginTop: "25px",
+            color: "#2563eb",
+            fontWeight: 600,
+          }}
+        >
+          Explore Resources →
+        </span>
+      </Link>
 
-            <h3>
-              {t.resources.card1Title}
-            </h3>
-
-            <p>
-              {t.resources.card1Description}
-            </p>
-
-            <a href="#resources">
-              {language === "en"
-                ? t.resources.card1Link
-                : language === "tr"
-                ? "Kaynakları Keşfet"
-                : "مشاهده منابع"}{" "}
-              →
-            </a>
+      {/* Listening & Speaking */}
+      <Link
+        href="/resources"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          background: "#ffffff",
+          border: "1px solid #e5e7eb",
+          borderRadius: "20px",
+          padding: "30px",
+          minHeight: "250px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              width: "52px",
+              height: "52px",
+              borderRadius: "14px",
+              background: "#eff6ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "25px",
+              marginBottom: "22px",
+            }}
+          >
+            🎧
           </div>
 
-          {/* RESOURCE 2 */}
-          <div className="resource-card">
-            <div className="resource-icon">
-              🎧
-            </div>
+          <h3
+            style={{
+              margin: "0 0 12px",
+              fontSize: "21px",
+              color: "#111827",
+            }}
+          >
+            Listening & Speaking
+          </h3>
 
-            <h3>
-              {t.resources.card2Title}
-            </h3>
-
-            <p>
-              {t.resources.card2Description}
-            </p>
-
-            <a href="#resources">
-              {language === "en"
-                ? t.resources.card2Link
-                : language === "tr"
-                ? "تمرین را شروع کنید"
-                : "شروع تمرین"}{" "}
-              →
-            </a>
-          </div>
-
-          {/* RESOURCE 3 */}
-          <div className="resource-card">
-            <div className="resource-icon">
-              📝
-            </div>
-
-            <h3>
-              {language === "en"
-                ? "Free Learning Materials"
-                : language === "tr"
-                ? "Ücretsiz Öğrenme Materyalleri"
-                : "مطالب آموزشی رایگان"}
-            </h3>
-
-            <p>
-              {language === "en"
-                ? "Access useful worksheets, exercises and free materials to support your learning."
-                : language === "tr"
-                ? "Öğrenmenizi desteklemek için faydalı çalışma kağıtlarına, alıştırmalara ve ücretsiz materyallere erişin."
-                : "به برگه‌های تمرین، تمرین‌های کاربردی و مطالب آموزشی رایگان دسترسی داشته باشید."}
-            </p>
-
-            <a href="#resources">
-              {language === "en"
-                ? "View Materials"
-                : language === "tr"
-                ? "Materyalleri Gör"
-                : "مشاهده مطالب"}{" "}
-              →
-            </a>
-          </div>
+          <p
+            style={{
+              margin: 0,
+              color: "#6b7280",
+              lineHeight: 1.6,
+              fontSize: "15px",
+            }}
+          >
+            Practice real English communication through listening
+            and speaking activities.
+          </p>
         </div>
-      </section>
+
+        <span
+          style={{
+            marginTop: "25px",
+            color: "#2563eb",
+            fontWeight: 600,
+          }}
+        >
+          Start Practicing →
+        </span>
+      </Link>
+
+      {/* Free Materials */}
+      <Link
+        href="/resources"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          background: "#ffffff",
+          border: "1px solid #e5e7eb",
+          borderRadius: "20px",
+          padding: "30px",
+          minHeight: "250px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              width: "52px",
+              height: "52px",
+              borderRadius: "14px",
+              background: "#eff6ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "25px",
+              marginBottom: "22px",
+            }}
+          >
+            📝
+          </div>
+
+          <h3
+            style={{
+              margin: "0 0 12px",
+              fontSize: "21px",
+              color: "#111827",
+            }}
+          >
+            Free Learning Materials
+          </h3>
+
+          <p
+            style={{
+              margin: 0,
+              color: "#6b7280",
+              lineHeight: 1.6,
+              fontSize: "15px",
+            }}
+          >
+            Access useful worksheets, exercises and free materials
+            to support your English learning.
+          </p>
+        </div>
+
+        <span
+          style={{
+            marginTop: "25px",
+            color: "#2563eb",
+            fontWeight: 600,
+          }}
+        >
+          View Materials →
+        </span>
+      </Link>
+
+      {/* English Tools */}
+      <Link
+        href="/toolkit"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          background: "#ffffff",
+          border: "1px solid #e5e7eb",
+          borderRadius: "20px",
+          padding: "30px",
+          minHeight: "250px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              width: "52px",
+              height: "52px",
+              borderRadius: "14px",
+              background: "#eff6ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "25px",
+              marginBottom: "22px",
+            }}
+          >
+            🧰
+          </div>
+
+          <h3
+            style={{
+              margin: "0 0 12px",
+              fontSize: "21px",
+              color: "#111827",
+            }}
+          >
+            English Tools
+          </h3>
+
+          <p
+            style={{
+              margin: 0,
+              color: "#6b7280",
+              lineHeight: 1.6,
+              fontSize: "15px",
+            }}
+          >
+            Use practical English tools including irregular verbs,
+            stative verbs and more.
+          </p>
+        </div>
+
+        <span
+          style={{
+            marginTop: "25px",
+            color: "#2563eb",
+            fontWeight: 600,
+          }}
+        >
+          Open English Tools →
+        </span>
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* =========================
           CTA
