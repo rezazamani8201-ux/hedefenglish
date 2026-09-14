@@ -31,7 +31,9 @@ export default function Home() {
 
           <a href="#private-lessons">{t.nav.privateLessons}</a>
 
-          <a href="/resources">{t.nav.resources}</a>
+         <Link href="/resources">
+  {t.nav.resources}
+</Link>
         </div>
 
         {user ? (
@@ -652,8 +654,9 @@ export default function Home() {
     {/* =========================
    {/* =========================
     RESOURCES
+    
 ========================== */}
-
+{user && (
 <section
   id="resources"
   style={{
@@ -1017,6 +1020,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+)}
 
       {/* =========================
           CTA

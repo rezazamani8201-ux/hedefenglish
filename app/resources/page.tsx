@@ -1,10 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/app/context/AuthContext";
 
 export default function ResourcesPage() {
+    const router = useRouter();
+  const { user, loading } = useAuth();
+  
   const [language, setLanguage] = useState<"en" | "tr" | "fa">("en");
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.replace("/login");
+    }
+  }, [user, loading, router]);
+
+  if (loading || !user) {
+    return null;
+  }
+
+  
 
   const content = {
     en: {
