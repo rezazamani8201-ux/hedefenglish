@@ -17,7 +17,8 @@ export default function ProtectedRoute({
     pathname === "/" ||
     pathname === "/login" ||
     pathname === "/register" ||
-    pathname.startsWith("/resources");
+    pathname.startsWith("/resources") ||
+    pathname.startsWith("/toolkit");
 
   useEffect(() => {
     if (!loading && !user && !isPublicPage) {
