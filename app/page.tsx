@@ -13,104 +13,141 @@ export default function Home() {
   const t = translations[language];
 
   return (
-    <main>
-      {/* =========================
-          NAVBAR
-      ========================== */}
-      <nav className="navbar">
-        <div className="logo">
-          Hedef <span>English</span>
-        </div>
-
-        <div
-  className="nav-links"
-  style={{
-    display: "flex",
-    alignItems: "center",
-    gap: "18px",
-    whiteSpace: "nowrap",
-    flex: "1",
-    justifyContent: "center",
-    minWidth: 0,
-  }}
->
-  <a href="#home">{t.nav.home}</a>
-  <a href="/about">{t.about.label}</a>
-  <a href="#level-test">{t.nav.levelTest}</a>
-  <a href="#courses">{t.nav.courses}</a>
-  <a href="#private-lessons">{t.nav.privateLessons}</a>
-
-  <Link href="/resources">
-    {t.nav.resources}
-  </Link>
-
-  <Link href="#english-tools">
-    English Tools
-  </Link>
-</div>
-
-        {user ? (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "12px",
-            }}
-          >
-            <Link
-              href="/account"
-              style={{
-                fontWeight: 600,
-                color: "#222",
-                textDecoration: "none",
-                cursor: "pointer",
-              }}
-            >
-              {user.user_metadata?.username ||
-                user.user_metadata?.full_name ||
-                user.email}
-            </Link>
-
-            <button
-              onClick={logout}
-              className="nav-button"
-              style={{
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              {t.nav.logout}
-            </button>
-          </div>
-        ) : (
-          <a href="/login" className="nav-button">
-            {t.nav.login}
-          </a>
-        )}
-
-        <select
-          value={language}
-          onChange={(e) =>
-            setLanguage(e.target.value as "en" | "tr" | "fa")
-          }
+  <main>
+    {/* =========================
+        NAVBAR
+    ========================== */}
+    <nav
+      style={{
+        width: "100%",
+        background: "#ffffff",
+        borderBottom: "1px solid #e8edf3",
+        position: "sticky",
+        top: 0,
+        zIndex: 20,
+      }}
+    >
+      {/* TOP ROW */}
+      <div
+        style={{
+          height: "76px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "0 6%",
+        }}
+      >
+        <Link
+          href="/"
           style={{
-            padding: "8px 12px",
-            borderRadius: "8px",
-            border: "1px solid #ddd",
-            background: "#fff",
-            cursor: "pointer",
-            fontSize: "14px",
+            textDecoration: "none",
+            color: "#173b78",
+            fontSize: "22px",
+            fontWeight: 800,
           }}
         >
-          <option value="en">🇬🇧 English</option>
-          <option value="tr">🇹🇷 Türkçe</option>
-          <option value="fa">🇮🇷 فارسی</option>
-        </select>
-      </nav>
+          Hedef <span style={{ color: "#3b82f6" }}>English</span>
+        </Link>
 
-      {/* =========================
-          HERO
-      ========================== */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+          }}
+        >
+          {user ? (
+            <>
+              <Link
+                href="/account"
+                style={{
+                  textDecoration: "none",
+                  color: "#4b5563",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                }}
+              >
+                {user.user_metadata?.username ||
+                  user.user_metadata?.full_name ||
+                  user.email}
+              </Link>
+
+              <button
+                onClick={logout}
+                className="nav-button"
+                style={{
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {t.nav.logout}
+              </button>
+            </>
+          ) : (
+            <a href="/login" className="nav-button">
+              {t.nav.login}
+            </a>
+          )}
+
+          <select
+            value={language}
+            onChange={(e) =>
+              setLanguage(e.target.value as "en" | "tr" | "fa")
+            }
+            style={{
+              padding: "8px 12px",
+              borderRadius: "8px",
+              border: "1px solid #dce2ea",
+              background: "#fff",
+              cursor: "pointer",
+              fontSize: "14px",
+              outline: "none",
+            }}
+          >
+            <option value="en">🇬🇧 English</option>
+            <option value="tr">🇹🇷 Türkçe</option>
+            <option value="fa">🇮🇷 فارسی</option>
+          </select>
+        </div>
+      </div>
+
+      {/* SECOND ROW — MAIN MENU */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "30px",
+          width: "100%",
+          padding: "14px 6% 16px",
+          borderTop: "1px solid #f0f2f5",
+          flexWrap: "wrap",
+          boxSizing: "border-box",
+        }}
+      >
+        <a href="#home">{t.nav.home}</a>
+
+        <a href="/about">{t.about.label}</a>
+
+        <a href="#level-test">{t.nav.levelTest}</a>
+
+        <a href="#courses">{t.nav.courses}</a>
+
+        <a href="#private-lessons">{t.nav.privateLessons}</a>
+
+        <Link href="/resources">
+          {t.nav.resources}
+        </Link>
+
+        <Link href="/toolkit">
+          English Tools
+        </Link>
+      </div>
+    </nav>
+
+    {/* =========================
+        HERO
+    ========================== */}
       <header className="hero" id="home">
         <div className="hero-content">
           <div className="hero-text">
