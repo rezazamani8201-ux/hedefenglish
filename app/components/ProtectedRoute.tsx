@@ -14,12 +14,14 @@ export default function ProtectedRoute({
   const router = useRouter();
 
   const isPublicPage =
-    pathname === "/" ||
-    pathname === "/login" ||
-    pathname === "/register" ||
-    pathname.startsWith("/resources") ||
-    pathname.startsWith("/toolkit") ||
-pathname.startsWith("/exercises");
+  pathname === "/" ||
+  pathname === "/login" ||
+  pathname === "/register" ||
+  pathname.startsWith("/about") ||
+  pathname.startsWith("/level-test") ||
+  pathname.startsWith("/resources") ||
+  pathname.startsWith("/toolkit") ||
+  pathname.startsWith("/exercises");
 
   useEffect(() => {
     if (!loading && !user && !isPublicPage) {
