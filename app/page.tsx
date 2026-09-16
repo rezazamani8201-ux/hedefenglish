@@ -138,7 +138,7 @@ export default function Home() {
         <Link href="/resources">
           {t.nav.resources}
         </Link>
-
+<Link href="/exercises">Exercises</Link>
         <Link href="/toolkit">
           English Tools
         </Link>
