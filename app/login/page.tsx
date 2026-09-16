@@ -21,14 +21,14 @@ export default function LoginPage() {
       return;
     }
 
-    window.location.href = "/";
+    window.location.href = window.location.origin + "/";
   };
 
   const handleGoogleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: "https://www.hedefenglish.com/",
+        redirectTo: window.location.origin + "/",
       },
     });
 

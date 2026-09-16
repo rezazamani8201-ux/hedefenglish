@@ -16,7 +16,8 @@ export default function ProtectedRoute({
   const isPublicPage =
   pathname === "/" ||
   pathname === "/login" ||
-  pathname === "/register" ||
+ pathname === "/register" ||
+pathname.startsWith("/admin") ||
   pathname.startsWith("/about") ||
   pathname.startsWith("/level-test") ||
   pathname.startsWith("/resources") ||

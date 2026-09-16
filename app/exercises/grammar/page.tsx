@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
+import { supabase } from "@/app/lib/supabase";
 const grammarFiles = [
   "Comparative & Superlative.pdf",
   "Conditional Sentences – Mixed Practice (Type 0 1 2).pdf",
@@ -170,22 +170,44 @@ export default function GrammarExercises() {
                   Grammar practice worksheet.
                 </p>
 
-                <a
-                  href={fileUrl}
-                  download
-                  style={{
-                    display: "inline-block",
-                    padding: "10px 16px",
-                    background: "#173b78",
-                    color: "#ffffff",
-                    textDecoration: "none",
-                    borderRadius: "8px",
-                    fontSize: "14px",
-                    fontWeight: 700,
-                  }}
-                >
-                  Download PDF
-                </a>
+                <button
+  onClick={async () => {
+    try {
+      let visitorId = localStorage.getItem("hedef_visitor_id");
+
+      if (!visitorId) {
+        visitorId = crypto.randomUUID();
+        localStorage.setItem("hedef_visitor_id", visitorId);
+      }
+
+      await supabase.from("file_downloads").insert({
+        user_id: null,
+        visitor_id: visitorId,
+        file_name: file,
+        file_path: fileUrl,
+      });
+
+      window.location.href = fileUrl;
+    } catch (error) {
+      console.error("Failed to record file download:", error);
+      window.location.href = fileUrl;
+    }
+  }}
+  style={{
+    display: "inline-block",
+    padding: "10px 16px",
+    background: "#173b78",
+    color: "#ffffff",
+    textDecoration: "none",
+    borderRadius: "8px",
+    fontSize: "14px",
+    fontWeight: 700,
+    border: "none",
+    cursor: "pointer",
+  }}
+>
+  Download PDF
+</button>
               </div>
             );
           })}
