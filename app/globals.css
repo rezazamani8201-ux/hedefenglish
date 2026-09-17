@@ -3946,3 +3946,83 @@ left: auto;
         font-size: 29px;
     }
 }
+/* FINAL FIX - Private Lesson Buttons */
+.private-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-top: 32px !important;
+  flex-wrap: nowrap !important;
+}
+
+.private-buttons a.private-button,
+.private-buttons a.private-instagram-button {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+
+  height: 54px !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+
+  border-radius: 12px !important;
+  gap: 10px !important;
+
+  white-space: nowrap !important;
+  overflow: hidden !important;
+
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.private-buttons a.private-button {
+  width: 290px !important;
+  min-width: 290px !important;
+}
+
+.private-buttons a.private-instagram-button {
+  width: 240px !important;
+  min-width: 240px !important;
+}
+
+.private-buttons a .social-icon {
+  width: 21px !important;
+  height: 21px !important;
+  min-width: 21px !important;
+  flex: 0 0 21px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.private-buttons a > span {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.private-buttons a > span:last-child {
+  margin-left: 4px !important;
+}
+
+@media (max-width: 600px) {
+  .private-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  .private-buttons a.private-button,
+  .private-buttons a.private-instagram-button {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
