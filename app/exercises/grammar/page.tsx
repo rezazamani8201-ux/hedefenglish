@@ -4,10 +4,10 @@ import Link from "next/link";
 import { supabase } from "@/app/lib/supabase";
 const grammarFiles = [
   "Comparative & Superlative.pdf",
-  "Conditional Sentences – Mixed Practice (Type 0 1 2).pdf",
+  "Conditional Sentences Mixed Practice Type 0 1 2.pdf",
   "future simple (Will Be Going To Present Continuous).pdf",
   "future simple.pdf",
-  "MOdals (can could should must).pdf",
+  "Modals (can could should must).pdf",
   "Passive Voice (advanced).pdf",
   "Passive Voice Mixed Practice.pdf",
   "Past Continuous.pdf",
