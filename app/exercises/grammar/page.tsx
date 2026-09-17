@@ -32,6 +32,7 @@ const grammarFiles = [
 "reported speech.pdf",
 "third conditional.pdf",
 ];
+grammarFiles.sort((a, b) => a.localeCompare(b));
 
 export default function GrammarExercises() {
   return (
