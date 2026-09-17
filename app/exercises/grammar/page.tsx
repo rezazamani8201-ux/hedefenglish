@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { supabase } from "@/app/lib/supabase";
+import { useState } from "react";
 const grammarFiles = [
   "Comparative & Superlative.pdf",
   "Conditional Sentences Mixed Practice Type 0 1 2.pdf",
@@ -35,6 +36,7 @@ const grammarFiles = [
 grammarFiles.sort((a, b) => a.localeCompare(b));
 
 export default function GrammarExercises() {
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <main
       style={{
@@ -136,7 +138,31 @@ export default function GrammarExercises() {
             worksheets.
           </p>
         </div>
-
+{/* SEARCH */}
+<div
+  style={{
+    maxWidth: "650px",
+    margin: "0 auto 40px",
+  }}
+>
+  <input
+    type="text"
+    placeholder="Search grammar exercises..."
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    style={{
+      width: "100%",
+      padding: "16px 20px",
+      border: "1px solid #dbe3ee",
+      borderRadius: "12px",
+      fontSize: "16px",
+      outline: "none",
+      boxSizing: "border-box",
+      background: "#ffffff",
+      color: "#173b78",
+    }}
+  />
+</div>
         {/* GRAMMAR PDF FILES */}
         <div
           style={{
@@ -145,7 +171,11 @@ export default function GrammarExercises() {
             gap: "22px",
           }}
         >
-          {grammarFiles.map((file) => {
+          {grammarFiles
+  .filter((file) =>
+    file.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  .map((file) => {
             const fileUrl = `/exercises/grammar/${encodeURIComponent(file)}`;
 
             return (
