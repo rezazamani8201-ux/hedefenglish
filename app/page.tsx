@@ -677,58 +677,126 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="private-buttons">
-              <a
-                href="https://wa.me/905531670982"
-                className="private-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-  src="/whatsapp.svg"
-  alt="WhatsApp"
-  className="social-icon"
+           <div
   style={{
-    width: "22px",
-    height: "22px",
-    minWidth: "22px",
-    display: "block",
-    flexShrink: 0,
-    objectFit: "contain",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "20px",
+    flexWrap: "wrap",
+    width: "100%",
+    marginTop: "32px",
+    boxSizing: "border-box",
   }}
-/>
+>
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/905531670982"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      boxSizing: "border-box",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "10px",
+      width: "min(365px, 100%)",
+      minHeight: "66px",
+      padding: "0 22px",
+      borderRadius: "16px",
+      background: "#25D366",
+      color: "#ffffff",
+      textDecoration: "none",
+      fontSize: "17px",
+      fontWeight: 600,
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      flexShrink: 0,
+    }}
+  >
+    <img
+      src="/whatsapp.svg"
+      alt="WhatsApp"
+      style={{
+        width: "23px",
+        height: "23px",
+        flexShrink: 0,
+        display: "block",
+        objectFit: "contain",
+      }}
+    />
 
-                <span>
-                  {t.privateLessons.whatsapp}
-                </span>
+    <span style={{ whiteSpace: "nowrap" }}>
+      {t.privateLessons.whatsapp}
+    </span>
 
-                <span>→</span>
-              </a>
+    <span
+      style={{
+        flexShrink: 0,
+        marginLeft: "4px",
+        fontSize: "21px",
+      }}
+    >
+      →
+    </span>
+  </a>
 
-              <a
-                href="https://instagram.com/Hedef.English"
-                className="private-instagram-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg
-                  className="social-icon"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.8 1.4a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z"
-                  />
-                </svg>
+  {/* Instagram */}
+  <a
+    href="https://instagram.com/Hedef.English"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      boxSizing: "border-box",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "10px",
+      width: "min(285px, 100%)",
+      minHeight: "66px",
+      padding: "0 22px",
+      borderRadius: "16px",
+      background: "linear-gradient(135deg, #ff9a1f, #f03a4f, #8e2de2)",
+      color: "#ffffff",
+      textDecoration: "none",
+      fontSize: "17px",
+      fontWeight: 600,
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      flexShrink: 0,
+    }}
+  >
+    <svg
+      width="23"
+      height="23"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      style={{
+        flexShrink: 0,
+        display: "block",
+      }}
+    >
+      <path
+        fill="currentColor"
+        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
+      />
+    </svg>
 
-                <span>
-                  {t.privateLessons.instagram}
-                </span>
+    <span style={{ whiteSpace: "nowrap" }}>
+      {t.privateLessons.instagram}
+    </span>
 
-                <span>→</span>
-              </a>
-            </div>
+    <span
+      style={{
+        flexShrink: 0,
+        marginLeft: "4px",
+        fontSize: "21px",
+      }}
+    >
+      →
+    </span>
+  </a>
+</div>
           </div>
         </div>
       </section>
