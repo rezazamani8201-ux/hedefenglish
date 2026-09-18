@@ -144,6 +144,36 @@ export default function Home() {
         </Link>
       </div>
     </nav>
+        {/* ONLINE ENGLISH CLASS BADGE */}
+    <Link
+      href="#private-lessons"
+      className="online-class-badge"
+    >
+      <span className="online-class-icon">🎓</span>
+
+      <span className="online-class-text">
+      <strong>
+  {language === "fa"
+    ? "کلاس آنلاین انگلیسی"
+    : language === "tr"
+    ? "Online İngilizce Dersi"
+    : "Online English Class"}
+</strong>
+
+<small>
+  {language === "fa"
+    ? "کلاس خصوصی با مدرس"
+    : language === "tr"
+    ? "Öğretmenle özel ders"
+    : "Private lessons with a teacher"}
+</small>
+      </span>
+
+      <span className="online-class-arrow">→</span>
+    </Link>
+
+    {/* =========================
+        HERO
 
     {/* =========================
         HERO
@@ -654,16 +684,19 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <svg
-                  className="social-icon"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M12 2.2A9.8 9.8 0 0 0 3.7 17.1L2.4 21.6l4.6-1.2A9.8 9.8 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.7.7.7-2.6-.2-.3A8 8 0 1 1 12 19.9Zm4.4-5.9c-.2-.1-1.3-.7-1.5-.8-.2-.1-1.3-.7-1.5-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.2-.5.1-1.5-.7-2.5-1.3-3.5-2.9-.3-.5.3-.5.8-1.7.1-.2 0-.4-.1-.5-.1-.1-.5-1.2-1.6-1.6-.2-.4-.4-.4-.5-.4h-.4c-.2 0-.5.1-.7.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 3.9 3.5 1.4.6 2 .7 2.7.6.4-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.3-.2-.5-.3Z"
-                  />
-                </svg>
+                <img
+  src="/whatsapp.svg"
+  alt="WhatsApp"
+  className="social-icon"
+  style={{
+    width: "22px",
+    height: "22px",
+    minWidth: "22px",
+    display: "block",
+    flexShrink: 0,
+    objectFit: "contain",
+  }}
+/>
 
                 <span>
                   {t.privateLessons.whatsapp}
@@ -1230,7 +1263,41 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* WHATSAPP ENGLISH SUPPORT */}
+<a
+  href={`https://wa.me/905531670982?text=${encodeURIComponent(
+    language === "fa"
+      ? "سلام، درباره زبان انگلیسی یک سؤال دارم."
+      : language === "tr"
+      ? "Merhaba, İngilizce hakkında bir sorum var."
+      : "Hi, I have a question about English."
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="whatsapp-support-button"
+>
+  <span className="whatsapp-support-icon">💬</span>
 
+  <span className="whatsapp-support-text">
+    <strong>
+      {language === "fa"
+        ? "سؤال زبان انگلیسی داری؟"
+        : language === "tr"
+        ? "İngilizce hakkında sorunuz mu var?"
+        : "Have a question about English?"}
+    </strong>
+
+    <small>
+      {language === "fa"
+        ? "همین الان بپرس!"
+        : language === "tr"
+        ? "Hemen sorun!"
+        : "Ask us now!"}
+    </small>
+  </span>
+
+  <span className="whatsapp-support-arrow">→</span>
+</a>
       {/* =========================
           FOOTER
       ========================== */}

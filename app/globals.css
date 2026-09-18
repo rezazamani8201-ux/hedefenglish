@@ -3946,83 +3946,330 @@ left: auto;
         font-size: 29px;
     }
 }
-/* FINAL FIX - Private Lesson Buttons */
-.private-buttons {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 16px !important;
-  margin-top: 32px !important;
-  flex-wrap: nowrap !important;
-}
-
-.private-buttons a.private-button,
-.private-buttons a.private-instagram-button {
-  box-sizing: border-box !important;
+/* WhatsApp button - final alignment */
+.private-buttons a.private-button {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  position: relative !important;
-
-  height: 54px !important;
-  margin: 0 !important;
-  padding: 0 20px !important;
-
-  border-radius: 12px !important;
   gap: 10px !important;
-
-  white-space: nowrap !important;
-  overflow: hidden !important;
-
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
+  box-sizing: border-box !important;
 }
 
-.private-buttons a.private-button {
-  width: 290px !important;
-  min-width: 290px !important;
-}
-
-.private-buttons a.private-instagram-button {
-  width: 240px !important;
-  min-width: 240px !important;
-}
-
-.private-buttons a .social-icon {
-  width: 21px !important;
-  height: 21px !important;
-  min-width: 21px !important;
-  flex: 0 0 21px !important;
+.private-buttons a.private-button .social-icon {
+  display: block !important;
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  flex: 0 0 22px !important;
   margin: 0 !important;
   padding: 0 !important;
   position: static !important;
   transform: none !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+/* ONLINE ENGLISH CLASS BADGE */
+.online-class-badge {
+  position: absolute;
+  top: 135px;
+  right: 24px;
+  z-index: 50;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 13px 17px;
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6, #60a5fa);
+  background-size: 200% 200%;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  box-shadow:
+    0 8px 25px rgba(37, 99, 235, 0.3),
+    0 0 0 1px rgba(59, 130, 246, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  animation:
+    onlineBadgeGlow 3s ease-in-out infinite,
+    onlineBadgeGradient 6s ease infinite;
 }
 
-.private-buttons a > span {
-  display: inline-block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  white-space: nowrap !important;
-  position: static !important;
-  transform: none !important;
+/* Hover */
+.online-class-badge:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 14px 35px rgba(37, 99, 235, 0.4),
+    0 0 25px rgba(59, 130, 246, 0.25);
 }
 
-.private-buttons a > span:last-child {
-  margin-left: 4px !important;
+/* Graduation icon */
+.online-class-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  font-size: 21px;
+  line-height: 1;
+
+  flex-shrink: 0;
+
+  animation: onlineIconFloat 2.5s ease-in-out infinite;
+}
+
+/* Text */
+.online-class-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.online-class-text strong {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.online-class-text small {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.92;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Arrow */
+.online-class-arrow {
+  font-size: 21px;
+  font-weight: 500;
+  margin-left: 3px;
+
+  transition: transform 0.25s ease;
+}
+
+.online-class-badge:hover .online-class-arrow {
+  transform: translateX(4px);
+}
+
+/* Soft glow */
+@keyframes onlineBadgeGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 25px rgba(37, 99, 235, 0.3),
+      0 0 0 1px rgba(59, 130, 246, 0.12);
+  }
+
+  50% {
+    box-shadow:
+      0 10px 30px rgba(37, 99, 235, 0.42),
+      0 0 22px rgba(59, 130, 246, 0.22);
+  }
+}
+
+/* Moving gradient */
+@keyframes onlineBadgeGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating icon */
+@keyframes onlineIconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .online-class-badge {
+    top: 125px;
+    right: 12px;
+
+    padding: 10px 12px;
+    gap: 8px;
+
+    border-radius: 15px;
+  }
+
+  .online-class-icon {
+    width: 31px;
+    height: 31px;
+    font-size: 18px;
+  }
+
+  .online-class-text strong {
+    font-size: 12px;
+  }
+
+  .online-class-text small {
+    font-size: 10px;
+  }
+
+  .online-class-arrow {
+    font-size: 18px;
+  }
+}
+/* WHATSAPP ENGLISH SUPPORT */
+.whatsapp-support-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 49;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 16px;
+  border-radius: 17px;
+
+  background: linear-gradient(135deg, #128c7e, #25d366);
+  color: #ffffff;
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow:
+    0 8px 25px rgba(18, 140, 126, 0.28),
+    0 0 0 1px rgba(37, 211, 102, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  animation: whatsappSupportGlow 3s ease-in-out infinite;
+}
+
+.whatsapp-support-button:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 14px 35px rgba(18, 140, 126, 0.4),
+    0 0 24px rgba(37, 211, 102, 0.22);
+}
+
+.whatsapp-support-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+
+  font-size: 20px;
+  line-height: 1;
+
+  flex-shrink: 0;
+}
+
+.whatsapp-support-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.whatsapp-support-text strong {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.whatsapp-support-text small {
+  font-size: 11px;
+  opacity: 0.92;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.whatsapp-support-arrow {
+  font-size: 21px;
+  margin-left: 3px;
+
+  transition: transform 0.25s ease;
+}
+
+.whatsapp-support-button:hover .whatsapp-support-arrow {
+  transform: translateX(4px);
+}
+
+@keyframes whatsappSupportGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 25px rgba(18, 140, 126, 0.28),
+      0 0 0 1px rgba(37, 211, 102, 0.12);
+  }
+
+  50% {
+    box-shadow:
+      0 10px 30px rgba(18, 140, 126, 0.4),
+      0 0 20px rgba(37, 211, 102, 0.2);
+  }
 }
 
 @media (max-width: 600px) {
-  .private-buttons {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    width: 100% !important;
+  .whatsapp-support-button {
+    bottom: 14px;
+    right: 12px;
+
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 15px;
   }
 
-  .private-buttons a.private-button,
-  .private-buttons a.private-instagram-button {
-    width: 100% !important;
-    min-width: 0 !important;
+  .whatsapp-support-icon {
+    width: 31px;
+    height: 31px;
+    font-size: 18px;
+  }
+
+  .whatsapp-support-text strong {
+    font-size: 12px;
+  }
+
+  .whatsapp-support-text small {
+    font-size: 10px;
+  }
+
+  .whatsapp-support-arrow {
+    font-size: 18px;
   }
 }

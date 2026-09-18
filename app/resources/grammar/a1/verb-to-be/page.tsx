@@ -1,5 +1,6 @@
+﻿
 "use client";
-
+import LessonNavigation from "@/app/components/LessonNavigation";
 import Link from "next/link";
 
 const examples = [
@@ -37,9 +38,9 @@ const questionExamples = [
 ];
 
 const shortAnswers = [
-  "Are you a teacher? — Yes, I am.",
-  "Is he your brother? — No, he isn't.",
-  "Are they from Turkey? — Yes, they are.",
+  "Are you a teacher? â€” Yes, I am.",
+  "Is he your brother? â€” No, he isn't.",
+  "Are they from Turkey? â€” Yes, they are.",
 ];
 
 const practiceQuestions = [
@@ -79,7 +80,7 @@ export default function VerbToBePage() {
             fontSize: "14px",
           }}
         >
-          ← Back to A1 Grammar
+          â† Back to A1 Grammar
         </Link>
       </header>
 
@@ -112,7 +113,7 @@ export default function VerbToBePage() {
               opacity: 0.85,
             }}
           >
-            A1 — BEGINNER GRAMMAR
+            A1 â€” BEGINNER GRAMMAR
           </div>
 
           <h1
@@ -141,7 +142,7 @@ export default function VerbToBePage() {
 
         {/* What is Verb to Be? */}
         <section style={cardStyle}>
-          <h2 style={headingStyle}>What is the verb “to be”?</h2>
+          <h2 style={headingStyle}>What is the verb â€œto beâ€?</h2>
 
           <p style={paragraphStyle}>
             The verb <strong>to be</strong> is one of the most important verbs
@@ -170,13 +171,13 @@ export default function VerbToBePage() {
 
             <VerbCard
               verb="IS"
-              subjects="He • She • It"
+              subjects="He â€¢ She â€¢ It"
               example="She is happy."
             />
 
             <VerbCard
               verb="ARE"
-              subjects="You • We • They"
+              subjects="You â€¢ We â€¢ They"
               example="They are happy."
             />
           </div>
@@ -389,7 +390,7 @@ export default function VerbToBePage() {
 
         {/* Common Uses */}
         <section style={cardStyle}>
-          <h2 style={headingStyle}>Common Uses of “To Be”</h2>
+          <h2 style={headingStyle}>Common Uses of â€œTo Beâ€</h2>
 
           <div
             style={{
@@ -443,22 +444,22 @@ export default function VerbToBePage() {
             }}
           >
             <NoteBox>
-              We say <strong>“I am”</strong>, not “I is” or “I are”.
+              We say <strong>â€œI amâ€</strong>, not â€œI isâ€ or â€œI areâ€.
             </NoteBox>
 
             <NoteBox>
-              We say <strong>“He is”</strong>, <strong>“She is”</strong>, and{" "}
-              <strong>“It is”</strong>.
+              We say <strong>â€œHe isâ€</strong>, <strong>â€œShe isâ€</strong>, and{" "}
+              <strong>â€œIt isâ€</strong>.
             </NoteBox>
 
             <NoteBox>
-              We say <strong>“You are”</strong>, <strong>“We are”</strong>, and{" "}
-              <strong>“They are”</strong>.
+              We say <strong>â€œYou areâ€</strong>, <strong>â€œWe areâ€</strong>, and{" "}
+              <strong>â€œThey areâ€</strong>.
             </NoteBox>
 
             <NoteBox>
               Do not use <strong>do / does</strong> to make questions with the
-              verb “to be”.
+              verb â€œto beâ€.
             </NoteBox>
           </div>
         </section>
@@ -528,30 +529,8 @@ export default function VerbToBePage() {
           </div>
         </section>
 
-        {/* Bottom Navigation */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            gap: "15px",
-            marginTop: "35px",
-            flexWrap: "wrap",
-          }}
-        >
-          <Link
-  href="/resources/grammar/a1"
-  style={bottomButton}
->
-  ← A1 Grammar
-</Link>
-
-<Link
-  href="/resources/grammar/a1/subject-pronouns"
-  style={bottomButton}
->
-  Next: Subject Pronouns →
-</Link>
-        </div>
+        
+        <LessonNavigation currentSlug="verb-to-be" />
       </section>
     </main>
   );
@@ -761,3 +740,6 @@ const bottomButton: React.CSSProperties = {
   fontSize: "14px",
   fontWeight: 600,
 };
+
+
+
