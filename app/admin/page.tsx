@@ -13,7 +13,8 @@ type Profile = {
 
 type LevelTestResult = {
   id: number;
-  user_id: string;
+  user_id: string | null;
+  visitor_id: string | null;
   score: number;
   total_questions: number;
   percentage: number;
@@ -151,7 +152,7 @@ const isAdmin = user?.email === "rezazamani8201@gmail.com";
 
   const getUserName = (userId: string | null) => {
     if (!userId) {
-      return "Anonymous visitor";
+    return "Guest Visitor";
     }
 
     const profile = users.find(
@@ -234,11 +235,14 @@ const isAdmin = user?.email === "rezazamani8201@gmail.com";
             Level Tests
           </div>
           <div style={styles.statNumber}>
-            {testResults.length}
-          </div>
-          <div style={styles.statHint}>
-            View test results
-          </div>
+  {testResults.length}
+</div>
+
+<div style={styles.statHint}>
+  Registered: {testResults.filter((test) => test.user_id !== null).length}
+  {" • "}
+  Guests: {testResults.filter((test) => test.user_id === null).length}
+</div>
         </button>
 
         <button
@@ -302,9 +306,23 @@ const isAdmin = user?.email === "rezazamani8201@gmail.com";
           </p>
 
           <p style={styles.infoText}>
-            Level tests completed:
-            <strong> {testResults.length}</strong>
-          </p>
+  Level tests completed:
+  <strong>{testResults.length}</strong>
+</p>
+
+<p style={styles.infoText}>
+  Registered users:
+  <strong>
+    {testResults.filter((test) => test.user_id !== null).length}
+  </strong>
+</p>
+
+<p style={styles.infoText}>
+  Guest visitors:
+  <strong>
+    {testResults.filter((test) => test.user_id === null).length}
+  </strong>
+</p>
         </div>
       </div>
     </>
