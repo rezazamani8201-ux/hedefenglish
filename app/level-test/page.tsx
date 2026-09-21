@@ -136,7 +136,7 @@ export default function LevelTestPage() {
 
   const question = questions[currentQuestion];
 
-  const handleNext = async () => {
+const handleNext = async () => {
   if (selectedAnswer === null) {
     alert("Please select an answer first.");
     return;
@@ -156,42 +156,47 @@ export default function LevelTestPage() {
       data: { user },
     } = await supabase.auth.getUser();
 
-    if (user) {
-      const percentage = Math.round(
-        (newScore / questions.length) * 100
-      );
+    const percentage = Math.round(
+      (newScore / questions.length) * 100
+    );
 
-      let level = "";
+    let level = "";
 
-      if (newScore <= 5) {
-        level = "A1";
-      } else if (newScore <= 10) {
-        level = "A2";
-      } else if (newScore <= 15) {
-        level = "B1";
-      } else {
-        level = "B2";
-      }
+    if (newScore <= 5) {
+      level = "A1";
+    } else if (newScore <= 10) {
+      level = "A2";
+    } else if (newScore <= 15) {
+      level = "B1";
+    } else {
+      level = "B2";
+    }
 
-      const { error } = await supabase
-        .from("level_test_results")
-        .insert({
-          user_id: user.id,
-          score: newScore,
-          total_questions: questions.length,
-          percentage,
-          level,
-        });
+    let visitorId = localStorage.getItem("hedef_visitor_id");
 
-      if (error) {
-        console.error("Error saving level test result:", error);
-      }
+    if (!visitorId) {
+      visitorId = crypto.randomUUID();
+      localStorage.setItem("hedef_visitor_id", visitorId);
+    }
+
+    const { error } = await supabase
+      .from("level_test_results")
+      .insert({
+        user_id: user?.id ?? null,
+        visitor_id: visitorId,
+        score: newScore,
+        total_questions: questions.length,
+        percentage,
+        level,
+      });
+
+    if (error) {
+      console.error("Error saving level test result:", error);
     }
 
     setFinished(true);
   }
 };
-
   const getResult = () => {
     if (score <= 5) {
       return {
