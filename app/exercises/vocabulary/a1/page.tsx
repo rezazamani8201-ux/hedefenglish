@@ -1,88 +1,103 @@
 "use client";
+import Image from "next/image";
 
 import Link from "next/link";
 
 const categories = [
   {
     title: "Family & Friends",
+    image: "/images/family-friends.png",
     description:
       "Learn and practice vocabulary about family members, friends, and relationships.",
     href: "/exercises/vocabulary/a1/family-friends",
   },
   {
     title: "Daily Routines",
+    image: "/images/daily-routines.png",
     description:
       "Practice vocabulary for everyday activities and daily routines.",
     href: "/exercises/vocabulary/a1/daily-routines",
   },
   {
     title: "Home & Rooms",
+    image: "/images/home-rooms.png",
     description:
       "Practice vocabulary for rooms, furniture, and things around the home.",
     href: "/exercises/vocabulary/a1/home-rooms",
   },
   {
     title: "Food & Drinks",
+    image: "/images/food-drinks.png",
     description:
       "Learn useful vocabulary for food, drinks, meals, and everyday eating.",
     href: "/exercises/vocabulary/a1/food-drinks",
   },
   {
     title: "Clothes & Colors",
+    image: "/images/clothes-colors.png",
     description:
       "Practice vocabulary for clothes, colors, and simple descriptions.",
     href: "/exercises/vocabulary/a1/clothes-colors",
   },
   {
     title: "Weather",
+    image: "/images/weather.png",
     description:
       "Learn basic vocabulary for weather and everyday conditions.",
     href: "/exercises/vocabulary/a1/weather",
   },
   {
     title: "Places in Town",
+    image: "/images/places-town.png",
     description:
       "Practice vocabulary for common places around town.",
     href: "/exercises/vocabulary/a1/places-town",
   },
   {
     title: "Transport",
+    image: "/images/transport.png",
     description:
       "Learn useful vocabulary for transportation and getting around.",
     href: "/exercises/vocabulary/a1/transport",
   },
   {
     title: "House & Furniture",
+    image: "/images/house-furniture.png",
     description:
       "Practice vocabulary for furniture and things inside the home.",
     href: "/exercises/vocabulary/a1/house-furniture",
   },
   {
     title: "Shopping & Money",
+    image: "/images/shopping-money.png",
     description:
       "Practice useful English vocabulary for shopping and money.",
     href: "/exercises/vocabulary/a1/shopping-money",
   },
   {
     title: "School & Classroom",
+    image: "/images/school-classroom.png",
     description:
       "Learn essential vocabulary for school and the classroom.",
     href: "/exercises/vocabulary/a1/school-classroom",
   },
   {
     title: "Body & Health",
+    image: "/images/body-health.png",
     description:
       "Learn basic vocabulary for parts of the body and everyday health.",
     href: "/exercises/vocabulary/a1/body-health",
   },
   {
     title: "Animals & Pets",
+    image: "/images/animals-pets.png",
     description:
       "Practice vocabulary about common animals and pets.",
     href: "/exercises/vocabulary/a1/animals-pets",
   },
   {
     title: "Holidays & Travel",
+    image: "/images/holidays-travel.png",
     description:
       "Practice essential vocabulary for holidays and travel.",
     href: "/exercises/vocabulary/a1/holidays-travel",
@@ -224,23 +239,47 @@ export default function A1Vocabulary() {
                   cursor: "pointer",
                 }}
               >
-                <div
-                  style={{
-                    width: "52px",
-                    height: "52px",
-                    borderRadius: "14px",
-                    background: "#eef5ff",
-                    color: "#2563eb",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "20px",
-                    fontWeight: 800,
-                    marginBottom: "20px",
-                  }}
-                >
-                  {category.title.charAt(0)}
-                </div>
+                {category.image ? (
+  <div
+    style={{
+      width: "100%",
+      height: "120px",
+      borderRadius: "14px",
+      overflow: "hidden",
+      marginBottom: "20px",
+      background: "#eef5ff",
+      position: "relative",
+    }}
+  >
+    <Image
+      src={category.image}
+      alt={category.title}
+      fill
+      sizes="(max-width: 768px) 100vw, 33vw"
+      style={{
+        objectFit: "cover",
+      }}
+    />
+  </div>
+) : (
+  <div
+    style={{
+      width: "52px",
+      height: "52px",
+      borderRadius: "14px",
+      background: "#eef5ff",
+      color: "#2563eb",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: "20px",
+      fontWeight: 800,
+      marginBottom: "20px",
+    }}
+  >
+    {category.title.charAt(0)}
+  </div>
+)}
 
                 <h2
                   style={{
