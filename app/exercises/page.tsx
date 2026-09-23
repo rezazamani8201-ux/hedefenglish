@@ -141,35 +141,38 @@ export default function Exercises() {
   </p>
 </Link>
 
-          <div
-            style={{
-              background: "#ffffff",
-              border: "1px solid #e8edf3",
-              borderRadius: "16px",
-              padding: "28px",
-              boxShadow: "0 8px 25px rgba(23, 59, 120, 0.05)",
-            }}
-          >
-            <h2
-              style={{
-                margin: "0 0 10px",
-                color: "#173b78",
-                fontSize: "21px",
-              }}
-            >
-              Vocabulary Exercises
-            </h2>
+          <Link
+  href="/exercises/vocabulary"
+  style={{
+    background: "#ffffff",
+    border: "1px solid #e8edf3",
+    borderRadius: "16px",
+    padding: "28px",
+    boxShadow: "0 8px 25px rgba(23, 59, 120, 0.05)",
+    textDecoration: "none",
+    display: "block",
+  }}
+>
+  <h2
+    style={{
+      margin: "0 0 10px",
+      color: "#173b78",
+      fontSize: "21px",
+    }}
+  >
+    Vocabulary Exercises
+  </h2>
 
-            <p
-              style={{
-                margin: 0,
-                color: "#64748b",
-                lineHeight: 1.6,
-              }}
-            >
-              Vocabulary worksheets and downloadable practice materials.
-            </p>
-          </div>
+  <p
+    style={{
+      margin: 0,
+      color: "#64748b",
+      lineHeight: 1.6,
+    }}
+  >
+    Build your vocabulary with level-based interactive exercises.
+  </p>
+</Link>
 
           <div
             style={{
