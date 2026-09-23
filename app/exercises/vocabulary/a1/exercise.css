@@ -1,0 +1,765 @@
+/* =========================================================
+   A1 VOCABULARY — SHARED DESIGN
+   Applies automatically to ALL A1 vocabulary lessons
+   ========================================================= */
+
+.a1-exercises-theme {
+  min-height: 100vh;
+  background: #f8fbff;
+  color: #13294b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   SHARED HEADER
+   ========================================================= */
+
+.a1-shared-header {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 28px 6%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e8edf3;
+  border-radius: 0;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+}
+
+.a1-shared-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.a1-logo {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 800;
+  color: #13294b;
+}
+
+.a1-logo span {
+  color: #3b82f6;
+}
+
+.a1-back-link {
+  text-decoration: none;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.a1-back-link:hover {
+  color: #3b82f6;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.a1-exercises-theme main:not(.a1-vocabulary-landing) {
+  min-height: calc(100vh - 100px);
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 60px 6% 80px !important;
+  box-sizing: border-box;
+  background: #f8fbff !important;
+}
+
+/* =========================================================
+   FAMILY & FRIENDS
+   If a lesson already has its own old header,
+   hide it because the shared layout now provides it.
+   ========================================================= */
+
+.a1-exercises-theme main:not(.a1-vocabulary-landing):has(> header) {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 0 80px !important;
+}
+
+.a1-exercises-theme main:not(.a1-vocabulary-landing):has(> header) > header {
+  display: none !important;
+}
+
+.a1-exercises-theme main:not(.a1-vocabulary-landing):has(> header) > div:first-of-type {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 60px 6% !important;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TITLE — OLD LESSONS
+   ========================================================= */
+
+.a1-exercises-theme main:not(:has(> header))::before {
+  content: "A1 VOCABULARY";
+
+  display: block;
+
+  text-align: center;
+
+  color: #3b82f6;
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 10px;
+}
+
+.a1-exercises-theme main:not(:has(> header)) > h1 {
+  margin: 0 0 12px !important;
+
+  text-align: center !important;
+
+  color: #13294b !important;
+
+  font-size: clamp(32px, 5vw, 48px) !important;
+
+  font-weight: 800 !important;
+}
+
+.a1-exercises-theme main:not(:has(> header)) > p:first-of-type {
+  margin: 0 0 45px !important;
+
+  text-align: center !important;
+
+  color: #64748b !important;
+
+  font-size: 0 !important;
+}
+
+.a1-exercises-theme main:not(:has(> header)) > p:first-of-type::after {
+  content: "Complete all five sections.";
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   TITLE — FAMILY & FRIENDS STYLE
+   ========================================================= */
+
+.a1-exercises-theme main:has(> header) > div:first-of-type > div {
+  text-align: center !important;
+  margin-bottom: 45px !important;
+}
+
+.a1-exercises-theme main:has(> header)
+  > div:first-of-type
+  > div
+  > p:first-child {
+  color: #3b82f6 !important;
+
+  font-size: 13px !important;
+  font-weight: 800 !important;
+
+  letter-spacing: 1.5px !important;
+
+  margin-bottom: 10px !important;
+}
+
+.a1-exercises-theme main:has(> header)
+  > div:first-of-type
+  > div
+  > h1 {
+  color: #13294b !important;
+
+  font-size: clamp(32px, 5vw, 48px) !important;
+
+  font-weight: 800 !important;
+
+  margin: 0 0 12px !important;
+}
+
+.a1-exercises-theme main:has(> header)
+  > div:first-of-type
+  > div
+  > p:last-child {
+  color: #64748b !important;
+
+  font-size: 16px !important;
+
+  margin: 0 !important;
+}
+
+
+/* =========================================================
+   ALL SECTION CARDS
+   ========================================================= */
+
+.a1-exercises-theme main:not(.a1-vocabulary-landing) section {
+  background: #ffffff !important;
+
+  border: 1px solid #e8edf3 !important;
+
+  border-radius: 20px !important;
+
+  padding: 28px !important;
+
+  margin: 0 0 24px !important;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06) !important;
+
+  box-sizing: border-box;
+
+  animation: a1FadeIn 0.35s ease;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.a1-exercises-theme main:not(.a1-vocabulary-landing) section h2 {
+  color: #13294b !important;
+
+  font-size: 22px !important;
+
+  font-weight: 800 !important;
+
+  margin: 0 0 24px !important;
+
+  padding-bottom: 18px !important;
+
+  border-bottom: 1px solid #e8edf3 !important;
+}
+
+
+/* =========================================================
+   OLD "SECTION 1 — ..." HEADINGS
+   Convert visually to Family & Friends format.
+   ========================================================= */
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(1)
+  h2 {
+  font-size: 0 !important;
+}
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(1)
+  h2::after {
+  content: "1. Multiple Choice";
+  font-size: 22px;
+}
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(2)
+  h2 {
+  font-size: 0 !important;
+}
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(2)
+  h2::after {
+  content: "2. Matching";
+  font-size: 22px;
+}
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(3)
+  h2 {
+  font-size: 0 !important;
+}
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(3)
+  h2::after {
+  content: "3. Complete the Sentences";
+  font-size: 22px;
+}
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(4)
+  h2 {
+  font-size: 0 !important;
+}
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(4)
+  h2::after {
+  content: "4. Choose the Correct Word";
+  font-size: 22px;
+}
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(5)
+  h2 {
+  font-size: 0 !important;
+}
+
+.a1-exercises-theme main:not(:has(> header))
+  section:nth-of-type(5)
+  h2::after {
+  content: "5. Practice";
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
+.a1-exercises-theme main:not(.a1-vocabulary-landing) section > div {
+  color: #13294b;
+}
+
+.a1-exercises-theme main section label {
+  display: block;
+
+  padding: 14px 18px;
+
+  margin: 9px 0;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #13294b;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  box-sizing: border-box;
+}
+
+.a1-exercises-theme main:not(.a1-vocabulary-landing) section label:hover {
+  border-color: #93c5fd;
+
+  background: #f8fbff;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.a1-exercises-theme input[type="text"],
+.a1-exercises-theme input[type="number"] {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 13px 15px;
+
+  border: 1px solid #dbe3ec;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #13294b;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.a1-exercises-theme input[type="text"]:focus,
+.a1-exercises-theme input[type="number"]:focus {
+  border-color: #3b82f6;
+
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.a1-exercises-theme select {
+  padding: 12px 14px;
+
+  border: 1px solid #dbe3ec;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #13294b;
+
+  font-size: 15px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.a1-exercises-theme select:focus {
+  border-color: #3b82f6;
+
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+
+/* =========================================================
+   CHECKBOX / RADIO
+   ========================================================= */
+
+.a1-exercises-theme input[type="radio"],
+.a1-exercises-theme input[type="checkbox"] {
+  accent-color: #3b82f6;
+
+  margin-right: 10px;
+}
+
+
+/* =========================================================
+   FEEDBACK
+   ========================================================= */
+
+.a1-exercises-theme main section .correct {
+  border-color: #86efac !important;
+
+  background: #f0fdf4 !important;
+}
+
+.a1-exercises-theme main section .incorrect {
+  border-color: #fca5a5 !important;
+
+  background: #fef2f2 !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.a1-exercises-theme button {
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 13px 22px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.a1-exercises-theme button:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 14px rgba(15, 23, 42, 0.12);
+}
+
+.a1-exercises-theme button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   ACTION AREA
+   ========================================================= */
+
+.a1-exercises-theme main button {
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   RESULT / SCORE
+   ========================================================= */
+
+.a1-exercises-theme main > div:last-child,
+.a1-exercises-theme main section + div {
+  border-radius: 16px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .a1-shared-header {
+    margin: 20px 16px 0;
+
+    padding: 20px;
+  }
+
+  .a1-shared-header-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .a1-logo {
+    font-size: 22px;
+  }
+
+  .a1-exercises-theme main {
+    padding: 40px 16px 60px !important;
+  }
+
+  .a1-exercises-theme main:has(> header) > div:first-of-type {
+    padding: 40px 16px !important;
+  }
+
+  .a1-exercises-theme main section {
+    padding: 20px !important;
+
+    border-radius: 16px !important;
+  }
+
+  .a1-exercises-theme main section h2 {
+    font-size: 19px !important;
+  }
+
+  .a1-exercises-theme main:not(:has(> header))
+    section
+    h2::after {
+    font-size: 19px;
+  }
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes a1FadeIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+/* =========================================================
+   A1 LESSON NAVIGATION
+   ========================================================= */
+
+.a1-lesson-navigation {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 6% 70px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+}
+
+.a1-nav-button {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e8edf3;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  color: #13294b;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.a1-nav-button:hover {
+  transform: translateY(-2px);
+
+  border-color: #bfdbfe;
+
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.a1-nav-button span {
+  font-size: 22px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.a1-nav-button div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.a1-nav-button small {
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+.a1-nav-button strong {
+  color: #13294b;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.a1-nav-next {
+  justify-content: flex-end;
+
+  text-align: right;
+}
+
+.a1-nav-center {
+  text-decoration: none;
+
+  color: #3b82f6;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.a1-nav-center:hover {
+  color: #1d4ed8;
+}
+
+.a1-nav-disabled {
+  opacity: 0.45;
+
+  cursor: default;
+
+  pointer-events: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .a1-lesson-navigation {
+    grid-template-columns: 1fr 1fr;
+
+    padding: 0 16px 50px;
+
+    gap: 12px;
+  }
+
+  .a1-nav-center {
+    grid-column: 1 / -1;
+
+    grid-row: 1;
+
+    text-align: center;
+
+    order: -1;
+
+    margin-bottom: 4px;
+  }
+
+  .a1-nav-button {
+    min-height: 64px;
+
+    padding: 12px;
+  }
+
+  .a1-nav-button strong {
+    font-size: 12px;
+  }
+
+  .a1-nav-button small {
+    font-size: 9px;
+  }
+
+  .a1-nav-button span {
+    font-size: 18px;
+  }
+}
+
+/* =========================================================
+   A1 VOCABULARY LANDING — FINAL LAYOUT FIX
+   ========================================================= */
+
+.a1-exercises-theme .a1-vocabulary-landing {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding-bottom: 80px !important;
+  box-sizing: border-box !important;
+}
+
+.a1-exercises-theme .a1-vocabulary-landing > header {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.a1-exercises-theme .a1-vocabulary-landing > header > div {
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+.a1-exercises-theme .a1-vocabulary-landing > section {
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 70px 6% 0 !important;
+  box-sizing: border-box !important;
+}
+
+.a1-exercises-theme .a1-vocabulary-landing > section > div:last-child {
+  width: 100% !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
