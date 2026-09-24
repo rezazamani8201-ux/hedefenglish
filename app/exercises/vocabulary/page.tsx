@@ -14,7 +14,7 @@ export default function VocabularyExercises() {
       level: "A2",
       title: "Elementary",
       description: "Expand your everyday vocabulary and improve your word knowledge.",
-      href: "#",
+      href: "/exercises/vocabulary/a2",
     },
     {
       level: "B1",
