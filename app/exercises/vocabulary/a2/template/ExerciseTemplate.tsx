@@ -830,15 +830,20 @@ useEffect(() => {
      UI
   ======================================================= */
 const isB1 = data.level === "B1 Vocabulary Worksheet";
+const isB2 = data.level === "B2 Vocabulary Worksheet";
 
-const vocabularyHref = isB1
+const vocabularyHref = isB2
+  ? "/exercises/vocabulary/b2"
+  : isB1
   ? "/exercises/vocabulary/b1"
   : "/exercises/vocabulary/a2";
 
-const vocabularyName = isB1
+const vocabularyName = isB2
+  ? "B2 Vocabulary"
+  : isB1
   ? "B1 Vocabulary"
   : "A2 Vocabulary";
-  return (
+return (
     <main style={pageStyle}>
       <div style={containerStyle}>
 
