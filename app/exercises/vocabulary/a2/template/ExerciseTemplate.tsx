@@ -1002,7 +1002,7 @@ const vocabularyName = isB1
                       }
                     >
                       {correct
-                        ? "âœ“ Correct"
+                        ? "\u2713 Correct"
                         : `âœ— Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
@@ -1106,7 +1106,7 @@ const vocabularyName = isB1
                       }
                     >
                       {correct
-                        ? "âœ“ Correct"
+                        ? "\u2713 Correct"
                         : `âœ— Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
@@ -1187,7 +1187,7 @@ const vocabularyName = isB1
                       }
                     >
                       {correct
-                        ? "âœ“ Correct"
+                        ? "\u2713 Correct"
                         : `âœ— Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
@@ -1299,8 +1299,8 @@ const vocabularyName = isB1
                       }
                     >
                       {correct
-                        ? "âœ“ Correct"
-                        : `âœ— Incorrect â€” Correct answer: ${question.correct}`}
+                        ? "\u2713 Correct"
+                        : `\u2717 Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1411,8 +1411,8 @@ const vocabularyName = isB1
                       }
                     >
                       {correct
-                        ? "âœ“ Correct"
-                        : `âœ— Incorrect â€” Correct answer: ${question.correct}`}
+                        ? "\u2713 Correct"
+                        : `\u2717 Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1630,3 +1630,4 @@ const vocabularyName = isB1
     </main>
   );
 }
+
