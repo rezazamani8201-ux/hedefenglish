@@ -17,11 +17,11 @@ export default function VocabularyExercises() {
       href: "/exercises/vocabulary/a2",
     },
     {
-      level: "B1",
-      title: "Intermediate",
-      description: "Develop a wider vocabulary for everyday and practical English.",
-      href: "#",
-    },
+  level: "B1",
+  title: "Intermediate",
+  description: "Develop a wider vocabulary for everyday and practical English.",
+  href: "/exercises/vocabulary/b1",
+},
     {
       level: "B2",
       title: "Upper-Intermediate",
@@ -204,7 +204,7 @@ export default function VocabularyExercises() {
                     fontWeight: 700,
                   }}
                 >
-                  {isAvailable ? "Explore A1 →" : "Coming soon"}
+                  {isAvailable ? `Explore ${item.level} →` : "Coming soon"}
                 </div>
               </div>
             );

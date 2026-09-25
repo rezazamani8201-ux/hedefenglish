@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
@@ -484,7 +484,7 @@ useEffect(() => {
       pdf.setTextColor(71, 85, 105);
 
       pdf.text(
-        "A2 Vocabulary Worksheet",
+        data.level || "A2 Vocabulary Worksheet",
         pageWidth / 2,
         y,
         {
@@ -519,7 +519,7 @@ useEffect(() => {
       startSection(35);
 
       addSectionTitle(
-        "Section 1 — Multiple Choice"
+        "Section 1 - Multiple Choice"
       );
 
       randomizedSection1.forEach(
@@ -539,7 +539,7 @@ useEffect(() => {
       startSection(40);
 
       addSectionTitle(
-        "Section 2 — Matching"
+        "Section 2 - Matching"
       );
 
       data.section2.questions.forEach(
@@ -613,7 +613,7 @@ useEffect(() => {
       startSection(35);
 
       addSectionTitle(
-        "Section 3 — Fill in the Blank"
+        "Section 3 - Fill in the Blank"
       );
 
       data.section3.forEach(
@@ -632,7 +632,7 @@ useEffect(() => {
       startSection(35);
 
       addSectionTitle(
-        "Section 4 — Choose the Correct Word"
+        "Section 4 - Choose the Correct Word"
       );
 
       randomizedSection4.forEach(
@@ -652,7 +652,7 @@ useEffect(() => {
       startSection(35);
 
       addSectionTitle(
-        "Section 5 — Practice"
+        "Section 5 - Practice"
       );
 
       randomizedSection5.forEach(
@@ -829,7 +829,15 @@ useEffect(() => {
   /* =======================================================
      UI
   ======================================================= */
+const isB1 = data.level === "B1 Vocabulary Worksheet";
 
+const vocabularyHref = isB1
+  ? "/exercises/vocabulary/b1"
+  : "/exercises/vocabulary/a2";
+
+const vocabularyName = isB1
+  ? "B1 Vocabulary"
+  : "A2 Vocabulary";
   return (
     <main style={pageStyle}>
       <div style={containerStyle}>
@@ -898,7 +906,7 @@ useEffect(() => {
 
         <section style={sectionStyle}>
           <h2 style={sectionTitleStyle}>
-            Section 1 — Multiple Choice
+            Section 1 - Multiple Choice
           </h2>
 
           <p style={instructionStyle}>
@@ -994,8 +1002,8 @@ useEffect(() => {
                       }
                     >
                       {correct
-                        ? "✓ Correct"
-                        : `✗ Incorrect — Correct answer: ${question.correct}`}
+                        ? "âœ“ Correct"
+                        : `âœ— Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1010,7 +1018,7 @@ useEffect(() => {
 
         <section style={sectionStyle}>
           <h2 style={sectionTitleStyle}>
-            Section 2 — Matching
+            Section 2 - Matching
           </h2>
 
           <p style={instructionStyle}>
@@ -1098,8 +1106,8 @@ useEffect(() => {
                       }
                     >
                       {correct
-                        ? "✓ Correct"
-                        : `✗ Incorrect — Correct answer: ${question.correct}`}
+                        ? "âœ“ Correct"
+                        : `âœ— Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1114,7 +1122,7 @@ useEffect(() => {
 
         <section style={sectionStyle}>
           <h2 style={sectionTitleStyle}>
-            Section 3 — Fill in the Blank
+            Section 3 -Fill in the Blank
           </h2>
 
           <p style={instructionStyle}>
@@ -1179,8 +1187,8 @@ useEffect(() => {
                       }
                     >
                       {correct
-                        ? "✓ Correct"
-                        : `✗ Incorrect — Correct answer: ${question.correct}`}
+                        ? "âœ“ Correct"
+                        : `âœ— Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1195,7 +1203,7 @@ useEffect(() => {
 
         <section style={sectionStyle}>
           <h2 style={sectionTitleStyle}>
-            Section 4 — Choose the Correct Word
+            Section 4 - Choose the Correct Word
           </h2>
 
           <p style={instructionStyle}>
@@ -1291,8 +1299,8 @@ useEffect(() => {
                       }
                     >
                       {correct
-                        ? "✓ Correct"
-                        : `✗ Incorrect — Correct answer: ${question.correct}`}
+                        ? "âœ“ Correct"
+                        : `âœ— Incorrect â€” Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1307,7 +1315,7 @@ useEffect(() => {
 
         <section style={sectionStyle}>
           <h2 style={sectionTitleStyle}>
-            Section 5 — Practice
+            Section 5 - Practice
           </h2>
 
           <p style={instructionStyle}>
@@ -1403,8 +1411,8 @@ useEffect(() => {
                       }
                     >
                       {correct
-                        ? "✓ Correct"
-                        : `✗ Incorrect — Correct answer: ${question.correct}`}
+                        ? "âœ“ Correct"
+                        : `âœ— Incorrect â€” Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1571,7 +1579,7 @@ useEffect(() => {
                 fontWeight: 700,
               }}
             >
-              ← {previousTitle}
+           &larr; {previousTitle}
             </Link>
           ) : (
             <div />
@@ -1589,7 +1597,7 @@ useEffect(() => {
                 fontWeight: 700,
               }}
             >
-              {nextTitle} →
+            {nextTitle} &rarr;
             </Link>
           ) : (
             <div />
@@ -1607,7 +1615,7 @@ useEffect(() => {
           }}
         >
           <Link
-            href="/exercises/vocabulary/a2"
+            href={vocabularyHref}
             style={{
               textDecoration: "none",
               color: "#64748b",
@@ -1615,7 +1623,7 @@ useEffect(() => {
               fontWeight: 600,
             }}
           >
-            ← Back to A2 Vocabulary
+            &larr; Back to {vocabularyName}
           </Link>
         </div>
       </div>
