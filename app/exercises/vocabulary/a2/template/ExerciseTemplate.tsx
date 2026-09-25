@@ -1003,7 +1003,7 @@ const vocabularyName = isB1
                     >
                       {correct
                         ? "\u2713 Correct"
-                        : `\u2717 Incorrect - Correct answer: ${question.correct}`}
+                        : `Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1107,7 +1107,7 @@ const vocabularyName = isB1
                     >
                       {correct
                         ? "\u2713 Correct"
-                        : `\u2717 Incorrect - Correct answer: ${question.correct}`}
+                        : `Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1188,7 +1188,7 @@ const vocabularyName = isB1
                     >
                       {correct
                         ? "\u2713 Correct"
-                        : `\u2717 Incorrect - Correct answer: ${question.correct}`}
+                        : `Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1300,7 +1300,7 @@ const vocabularyName = isB1
                     >
                       {correct
                         ? "\u2713 Correct"
-                        : `\u2717 Incorrect - Correct answer: ${question.correct}`}
+                        : `Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
@@ -1412,7 +1412,7 @@ const vocabularyName = isB1
                     >
                       {correct
                         ? "\u2713 Correct"
-                        : `\u2717 Incorrect - Correct answer: ${question.correct}`}
+                        : `Incorrect - Correct answer: ${question.correct}`}
                     </div>
                   )}
                 </div>
