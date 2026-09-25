@@ -2,34 +2,38 @@
 
 import Link from "next/link";
 
-export default function VocabularyExercises() {
-  const levels = [
-    {
-      level: "A1",
-      title: "Beginner",
-      description: "Build your basic English vocabulary with simple interactive exercises.",
-      href: "/exercises/vocabulary/a1",
-    },
-    {
-      level: "A2",
-      title: "Elementary",
-      description: "Expand your everyday vocabulary and improve your word knowledge.",
-      href: "/exercises/vocabulary/a2",
-    },
-    {
-  level: "B1",
-  title: "Intermediate",
-  description: "Develop a wider vocabulary for everyday and practical English.",
-  href: "/exercises/vocabulary/b1",
-},
-    {
-      level: "B2",
-      title: "Upper-Intermediate",
-      description: "Strengthen your vocabulary with more advanced English practice.",
-      href: "#",
-    },
-  ];
+const levels = [
+  {
+    level: "A1",
+    title: "A1 Vocabulary",
+    description:
+      "Build your foundation with essential vocabulary for everyday English.",
+    href: "/exercises/vocabulary/a1",
+  },
+  {
+    level: "A2",
+    title: "A2 Vocabulary",
+    description:
+      "Expand your vocabulary with practical topics for everyday communication.",
+    href: "/exercises/vocabulary/a2",
+  },
+  {
+    level: "B1",
+    title: "B1 Vocabulary",
+    description:
+      "Improve your vocabulary with practical intermediate topics for real-life English.",
+    href: "/exercises/vocabulary/b1",
+  },
+  {
+    level: "B2",
+    title: "B2 Vocabulary",
+    description:
+      "Develop advanced vocabulary for communication, work, society, technology, culture, and more.",
+    href: "/exercises/vocabulary/b2",
+  },
+];
 
+export default function VocabularyLevelsPage() {
   return (
     <main
       style={{
@@ -38,7 +42,6 @@ export default function VocabularyExercises() {
         paddingBottom: "80px",
       }}
     >
-      {/* HEADER */}
       <header
         style={{
           background: "#ffffff",
@@ -51,8 +54,9 @@ export default function VocabularyExercises() {
             maxWidth: "1100px",
             margin: "0 auto",
             display: "flex",
-            alignItems: "center",
             justifyContent: "space-between",
+            alignItems: "center",
+            gap: "20px",
           }}
         >
           <Link
@@ -72,103 +76,102 @@ export default function VocabularyExercises() {
             style={{
               textDecoration: "none",
               color: "#4b5563",
-              fontSize: "14px",
               fontWeight: 600,
             }}
           >
-            ← Back to Exercises
+            &larr; Back to Exercises
           </Link>
         </div>
       </header>
 
-      {/* CONTENT */}
-      <section
+      <div
         style={{
           maxWidth: "1100px",
           margin: "0 auto",
-          padding: "70px 6% 0",
+          padding: "60px 6%",
         }}
       >
         <div
           style={{
             textAlign: "center",
-            marginBottom: "50px",
+            marginBottom: "45px",
           }}
         >
           <p
             style={{
-              margin: "0 0 12px",
               color: "#3b82f6",
-              fontSize: "13px",
               fontWeight: 800,
               letterSpacing: "1.5px",
+              fontSize: "13px",
+              marginBottom: "10px",
             }}
           >
-            HEDEF ENGLISH
+            VOCABULARY
           </p>
 
           <h1
             style={{
-              margin: "0 0 16px",
               color: "#13294b",
-              fontSize: "clamp(36px, 5vw, 54px)",
+              fontSize: "clamp(32px, 5vw, 48px)",
+              margin: "0 0 12px",
               fontWeight: 800,
             }}
           >
-            Vocabulary Exercises
+            Vocabulary Levels
           </h1>
 
           <p
             style={{
-              margin: "0 auto",
-              maxWidth: "680px",
               color: "#64748b",
-              fontSize: "17px",
+              maxWidth: "700px",
+              margin: "0 auto",
               lineHeight: 1.7,
             }}
           >
-            Choose your English level and practice vocabulary with
-            interactive exercises and downloadable materials.
+            Choose your English level and practice vocabulary through
+            structured exercises designed for each stage of your learning.
           </p>
         </div>
 
-        {/* LEVEL CARDS */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "22px",
           }}
         >
-          {levels.map((item) => {
-            const isAvailable = item.href !== "#";
-
-            const card = (
+          {levels.map((item) => (
+            <Link
+              key={item.level}
+              href={item.href}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
               <div
                 style={{
-                  height: "100%",
-                  boxSizing: "border-box",
                   background: "#ffffff",
-                  border: "1px solid #e8edf3",
+                  border: "1px solid #e2e8f0",
                   borderRadius: "18px",
                   padding: "30px",
-                  boxShadow: "0 8px 25px rgba(23, 59, 120, 0.05)",
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                  cursor: isAvailable ? "pointer" : "default",
+                  height: "100%",
+                  boxSizing: "border-box",
+                  boxShadow: "0 4px 15px rgba(15, 23, 42, 0.04)",
                 }}
               >
                 <div
                   style={{
                     width: "58px",
                     height: "58px",
-                    borderRadius: "15px",
-                    background: "#eef5ff",
+                    borderRadius: "16px",
+                    background: "#eff6ff",
                     color: "#2563eb",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "20px",
                     fontWeight: 800,
+                    fontSize: "18px",
                     marginBottom: "22px",
                   }}
                 >
@@ -177,9 +180,10 @@ export default function VocabularyExercises() {
 
                 <h2
                   style={{
-                    margin: "0 0 10px",
-                    color: "#173b78",
-                    fontSize: "22px",
+                    color: "#13294b",
+                    fontSize: "24px",
+                    margin: "0 0 12px",
+                    fontWeight: 800,
                   }}
                 >
                   {item.title}
@@ -187,10 +191,10 @@ export default function VocabularyExercises() {
 
                 <p
                   style={{
-                    margin: 0,
                     color: "#64748b",
-                    lineHeight: 1.65,
-                    fontSize: "15px",
+                    fontSize: "14px",
+                    lineHeight: 1.7,
+                    margin: "0 0 22px",
                   }}
                 >
                   {item.description}
@@ -198,34 +202,37 @@ export default function VocabularyExercises() {
 
                 <div
                   style={{
-                    marginTop: "24px",
-                    color: isAvailable ? "#2563eb" : "#94a3b8",
-                    fontSize: "14px",
+                    color: "#2563eb",
                     fontWeight: 700,
+                    fontSize: "14px",
                   }}
                 >
-                  {isAvailable ? `Explore ${item.level} →` : "Coming soon"}
+                  Explore Level &rarr;
                 </div>
               </div>
-            );
-
-            return isAvailable ? (
-              <Link
-                key={item.level}
-                href={item.href}
-                style={{
-                  textDecoration: "none",
-                  display: "block",
-                }}
-              >
-                {card}
-              </Link>
-            ) : (
-              <div key={item.level}>{card}</div>
-            );
-          })}
+            </Link>
+          ))}
         </div>
-      </section>
+
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "45px",
+          }}
+        >
+          <Link
+            href="/exercises"
+            style={{
+              textDecoration: "none",
+              color: "#64748b",
+              fontSize: "14px",
+              fontWeight: 600,
+            }}
+          >
+            &larr; Back to Exercises
+          </Link>
+        </div>
+      </div>
     </main>
   );
 }
