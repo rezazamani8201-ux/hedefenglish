@@ -1,20 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
-const buttonStyle = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: "12px 18px",
-  borderRadius: "10px",
-  border: "1px solid #dbe2ea",
-  background: "#fff",
-  color: "#173b78",
-  textDecoration: "none",
-  fontSize: "14px",
-  fontWeight: 600,
-};
+import ExploreButton from "../../../components/ExploreButton";
 
 const topics = [
   {
@@ -130,6 +117,20 @@ const topics = [
       "Use advanced grammar and functional language in professional and everyday situations.",
   },
 ];
+
+const buttonStyle = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "12px 18px",
+  borderRadius: "10px",
+  border: "1px solid #dbe2ea",
+  background: "#fff",
+  color: "#173b78",
+  textDecoration: "none",
+  fontSize: "14px",
+  fontWeight: 600,
+};
 
 export default function B2GrammarPage() {
   return (
@@ -248,79 +249,66 @@ export default function B2GrammarPage() {
             }}
           >
             {topics.map((topic) => (
-              <Link
+              <article
                 key={topic.slug}
-                href={`/resources/grammar/b2/${topic.slug}`}
                 style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  display: "block",
+                  height: "100%",
+                  boxSizing: "border-box",
+                  background: "#fff",
+                  border: "1px solid #e5eaf0",
+                  borderRadius: "18px",
+                  padding: "25px",
+                  boxShadow: "0 6px 20px rgba(0,0,0,0.03)",
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
                 }}
               >
-                <article
+                <div
                   style={{
-                    height: "100%",
-                    boxSizing: "border-box",
-                    background: "#fff",
-                    border: "1px solid #e5eaf0",
-                    borderRadius: "18px",
-                    padding: "25px",
-                    boxShadow: "0 6px 20px rgba(0,0,0,0.03)",
-                    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                    width: "44px",
+                    height: "44px",
+                    borderRadius: "12px",
+                    background: "#eef4ff",
+                    color: "#173b78",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    marginBottom: "18px",
                   }}
                 >
-                  <div
-                    style={{
-                      width: "44px",
-                      height: "44px",
-                      borderRadius: "12px",
-                      background: "#eef4ff",
-                      color: "#173b78",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "13px",
-                      fontWeight: 700,
-                      marginBottom: "18px",
-                    }}
-                  >
-                    {topic.number}
-                  </div>
+                  {topic.number}
+                </div>
 
-                  <h3
-                    style={{
-                      color: "#173b78",
-                      margin: "0 0 10px",
-                      fontSize: "20px",
-                      lineHeight: 1.4,
-                    }}
-                  >
-                    {topic.title}
-                  </h3>
+                <h3
+                  style={{
+                    color: "#173b78",
+                    margin: "0 0 10px",
+                    fontSize: "20px",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {topic.title}
+                </h3>
 
-                  <p
-                    style={{
-                      color: "#667085",
-                      fontSize: "14px",
-                      lineHeight: 1.7,
-                      margin: 0,
-                    }}
-                  >
-                    {topic.description}
-                  </p>
+                <p
+                  style={{
+                    color: "#667085",
+                    fontSize: "14px",
+                    lineHeight: 1.7,
+                    margin: 0,
+                  }}
+                >
+                  {topic.description}
+                </p>
 
-                  <div
-                    style={{
-                      marginTop: "18px",
-                      color: "#173b78",
-                      fontSize: "14px",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Open Lesson →
-                  </div>
-                </article>
-              </Link>
+                <div style={{ marginTop: "18px" }}>
+                  <ExploreButton
+                    text="Open Lesson"
+                    href={`/resources/grammar/b2/${topic.slug}`}
+                  />
+                </div>
+              </article>
             ))}
           </div>
         </section>

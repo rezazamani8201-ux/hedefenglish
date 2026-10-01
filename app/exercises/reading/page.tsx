@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import ExploreButton from "../../components/ExploreButton";
 const levels = [
   {
     level: "A1",
@@ -93,79 +93,66 @@ export default function ReadingExercisesPage() {
           }}
         >
           {levels.map((item) => (
-            <Link
+            <article
               key={item.level}
-              href={item.href}
               style={{
-                textDecoration: "none",
-                color: "inherit",
+                background: "#ffffff",
+                border: "1px solid #e4eaf2",
+                borderRadius: "20px",
+                padding: "32px",
+                minHeight: "210px",
+                boxShadow: "0 12px 30px rgba(30, 60, 100, 0.06)",
+                transition: "transform 0.2s ease, box-shadow 0.2s ease",
               }}
             >
-              <article
+              <div
                 style={{
-                  background: "#ffffff",
-                  border: "1px solid #e4eaf2",
-                  borderRadius: "20px",
-                  padding: "32px",
-                  minHeight: "210px",
-                  boxShadow: "0 12px 30px rgba(30, 60, 100, 0.06)",
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minWidth: "54px",
+                  height: "34px",
+                  padding: "0 12px",
+                  borderRadius: "8px",
+                  background: "#edf4ff",
+                  color: "#2f6df6",
+                  fontSize: "14px",
+                  fontWeight: 800,
+                  marginBottom: "22px",
                 }}
               >
-                <div
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    minWidth: "54px",
-                    height: "34px",
-                    padding: "0 12px",
-                    borderRadius: "8px",
-                    background: "#edf4ff",
-                    color: "#2f6df6",
-                    fontSize: "14px",
-                    fontWeight: 800,
-                    marginBottom: "22px",
-                  }}
-                >
-                  {item.level}
-                </div>
+                {item.level}
+              </div>
 
-                <h2
-                  style={{
-                    margin: 0,
-                    color: "#173b78",
-                    fontSize: "25px",
-                    lineHeight: 1.3,
-                    fontWeight: 800,
-                  }}
-                >
-                  {item.title}
-                </h2>
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#173b78",
+                  fontSize: "25px",
+                  lineHeight: 1.3,
+                  fontWeight: 800,
+                }}
+              >
+                {item.title}
+              </h2>
 
-                <p
-                  style={{
-                    marginTop: "16px",
-                    marginBottom: "24px",
-                    color: "#607796",
-                    fontSize: "16px",
-                    lineHeight: 1.7,
-                  }}
-                >
-                  {item.description}
-                </p>
+              <p
+                style={{
+                  marginTop: "16px",
+                  marginBottom: "24px",
+                  color: "#607796",
+                  fontSize: "16px",
+                  lineHeight: 1.7,
+                }}
+              >
+                {item.description}
+              </p>
 
-                <div
-                  style={{
-                    color: "#2f6df6",
-                    fontSize: "15px",
-                    fontWeight: 700,
-                  }}
-                >
-                  Explore Reading →
-                </div>
-              </article>
-            </Link>
+              <ExploreButton
+                text="Explore Reading"
+                href={item.href}
+              />
+            </article>
           ))}
         </div>
 

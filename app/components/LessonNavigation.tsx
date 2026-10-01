@@ -1,98 +1,203 @@
 "use client";
 
 import Link from "next/link";
-import type { CSSProperties } from "react";
 
-const lessons = [
-  { title: "Verb to Be", slug: "verb-to-be" },
-  { title: "Subject Pronouns", slug: "subject-pronouns" },
-  { title: "Possessive Adjectives", slug: "possessive-adjectives" },
-  { title: "Articles", slug: "articles" },
-  { title: "Plural Nouns", slug: "plural-nouns" },
-  { title: "This / That / These / Those", slug: "this-that-these-those" },
-  { title: "Have / Has", slug: "have-has" },
-  { title: "There is / There are", slug: "there-is-there-are" },
-  { title: "Present Simple", slug: "present-simple" },
-  { title: "Adverbs of Frequency", slug: "adverbs-of-frequency" },
-  { title: "Can / Can't", slug: "can-cant" },
-  { title: "Imperatives", slug: "imperatives" },
-  { title: "Prepositions of Place", slug: "prepositions-of-place" },
-  { title: "Prepositions of Time", slug: "prepositions-of-time" },
-  { title: "Question Words", slug: "question-words" },
-  { title: "Basic Conjunctions", slug: "basic-conjunctions" },
-];
+type LessonNavigationProps = {
+  previousHref?: string;
+  previousTitle?: string;
+  nextHref?: string;
+  nextTitle?: string;
 
-const buttonStyle: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: "12px 18px",
-  borderRadius: "10px",
-  border: "1px solid #dbe2ea",
-  background: "#fff",
-  color: "#173b78",
-  textDecoration: "none",
-  fontSize: "14px",
-  fontWeight: 600,
+  backHref?: string;
+  backTitle?: string;
 };
 
-export default function LessonNavigation({
-  currentSlug,
+function Arrow({
+  direction,
 }: {
-  currentSlug: string;
+  direction: "left" | "right";
 }) {
-  const currentIndex = lessons.findIndex(
-    (lesson) => lesson.slug === currentSlug
+  return (
+    <span
+      style={{
+        position: "relative",
+        width: "17px",
+        height: "14px",
+        display: "block",
+        flexShrink: 0,
+      }}
+    >
+      <span
+        style={{
+          position: "absolute",
+          left: direction === "left" ? "4px" : "0",
+          top: "6px",
+          width: "13px",
+          height: "2px",
+          background: "#ffffff",
+          borderRadius: "2px",
+        }}
+      />
+
+      <span
+        style={{
+          position: "absolute",
+          [direction === "left" ? "left" : "right"]: "0",
+          top: "3px",
+          width: "7px",
+          height: "7px",
+          borderTop: "2px solid #ffffff",
+          borderRight: "2px solid #ffffff",
+          transform:
+            direction === "left"
+              ? "rotate(-135deg)"
+              : "rotate(45deg)",
+        }}
+      />
+    </span>
   );
+}
 
-  if (currentIndex === -1) {
-    return null;
-  }
+function NavigationButton({
+  href,
+  children,
+  direction,
+}: {
+  href: string;
+  children: React.ReactNode;
+  direction: "left" | "right";
+}) {
+  return (
+    <Link
+      href={href}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "10px",
+        minHeight: "44px",
+        padding: "0 18px",
+        borderRadius: "12px",
+        background: "#616161",
+        color: "#ffffff",
+        textDecoration: "none",
+        fontSize: "14px",
+        fontWeight: 700,
+        boxShadow: "0 5px 14px rgba(97, 97, 97, 0.18)",
+        transition: "all 0.2s ease",
+      }}
+    >
+      {direction === "left" && (
+        <Arrow direction="left" />
+      )}
 
-  const previousLesson =
-    currentIndex > 0 ? lessons[currentIndex - 1] : null;
+      <span>{children}</span>
 
-  const nextLesson =
-    currentIndex < lessons.length - 1
-      ? lessons[currentIndex + 1]
-      : null;
+      {direction === "right" && (
+        <Arrow direction="right" />
+      )}
+    </Link>
+  );
+}
 
+function BackButton({
+  href,
+  title,
+}: {
+  href: string;
+  title: string;
+}) {
+  return (
+    <Link
+      href={href}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "10px",
+        minHeight: "42px",
+        padding: "0 17px",
+        borderRadius: "12px",
+        background: "#616161",
+        color: "#ffffff",
+        textDecoration: "none",
+        fontSize: "14px",
+        fontWeight: 700,
+        boxShadow: "0 5px 14px rgba(97, 97, 97, 0.16)",
+        transition: "all 0.2s ease",
+      }}
+    >
+      <Arrow direction="left" />
+      <span>{title}</span>
+    </Link>
+  );
+}
+
+export default function LessonNavigation({
+  previousHref,
+  previousTitle = "Previous",
+  nextHref,
+  nextTitle = "Next",
+  backHref,
+  backTitle,
+}: LessonNavigationProps) {
   return (
     <div
       style={{
+        width: "100%",
         display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        gap: "15px",
-        marginTop: "35px",
-        flexWrap: "wrap",
+        flexDirection: "column",
+        gap: "14px",
       }}
     >
-      {previousLesson ? (
-        <Link
-          href={`/resources/grammar/a1/${previousLesson.slug}`}
-          style={buttonStyle}
+      {/* BACK */}
+      {backHref && backTitle && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
-          ← {previousLesson.title}
-        </Link>
-      ) : (
-        <Link href="/resources/grammar/a1" style={buttonStyle}>
-          ← A1 Grammar
-        </Link>
+          <BackButton
+            href={backHref}
+            title={backTitle}
+          />
+        </div>
       )}
 
-      {nextLesson ? (
-        <Link
-          href={`/resources/grammar/a1/${nextLesson.slug}`}
-          style={buttonStyle}
-        >
-          Next: {nextLesson.title} →
-        </Link>
-      ) : (
-        <Link href="/resources/grammar/a1" style={buttonStyle}>
-          A1 Grammar ✓
-        </Link>
-      )}
+      {/* PREVIOUS / NEXT */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: "14px",
+          width: "100%",
+          flexWrap: "wrap",
+        }}
+      >
+        {previousHref ? (
+          <NavigationButton
+            href={previousHref}
+            direction="left"
+          >
+            {previousTitle}
+          </NavigationButton>
+        ) : (
+          <span />
+        )}
+
+        {nextHref ? (
+          <NavigationButton
+            href={nextHref}
+            direction="right"
+          >
+            {nextTitle}
+          </NavigationButton>
+        ) : (
+          <span />
+        )}
+      </div>
     </div>
   );
 }

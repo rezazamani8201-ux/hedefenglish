@@ -1,5 +1,5 @@
 "use client";
-
+import ExploreButton from "./components/ExploreButton";
 import { useAuth } from "@/app/context/AuthContext";
 import Link from "next/link";
 import { translations } from "@/app/i18n/translations";
@@ -169,8 +169,41 @@ export default function Home() {
 </small>
       </span>
 
-      <span className="online-class-arrow">→</span>
-    </Link>
+<span
+  style={{
+    position: "relative",
+    width: "17px",
+    height: "14px",
+    display: "block",
+    flexShrink: 0,
+    marginLeft: "4px",
+  }}
+>
+  <span
+    style={{
+      position: "absolute",
+      left: "0",
+      top: "6px",
+      width: "13px",
+      height: "2px",
+      background: "#ffffff",
+      borderRadius: "2px",
+    }}
+  />
+
+  <span
+    style={{
+      position: "absolute",
+      right: "0",
+      top: "3px",
+      width: "7px",
+      height: "7px",
+      borderTop: "2px solid #ffffff",
+      borderRight: "2px solid #ffffff",
+      transform: "rotate(45deg)",
+    }}
+  />
+</span>    </Link>
 
     {/* =========================
         HERO
@@ -420,19 +453,21 @@ export default function Home() {
             </div>
 
             <div className="course-bottom">
-              <strong>
-                {t.courseA1.level}
-              </strong>
+  <strong>
+    {t.courseA1.level}
+  </strong>
 
-              <a href="/courses/general-english-a1">
-                {language === "en"
-                  ? "Explore"
-                  : language === "tr"
-                  ? "Keşfet"
-                  : "مشاهده"}{" "}
-                →
-              </a>
-            </div>
+  <ExploreButton
+    text={
+      language === "en"
+        ? "Explore"
+        : language === "tr"
+        ? "Keşfet"
+        : "مشاهده"
+    }
+    href="/courses/general-english-a1"
+  />
+</div>
           </div>
 
           {/* A2 */}
@@ -462,19 +497,21 @@ export default function Home() {
             </div>
 
             <div className="course-bottom">
-              <strong>
-                {t.courseA2.level}
-              </strong>
+  <strong>
+    {t.courseA2.level}
+  </strong>
 
-              <a href="/courses/general-english-a2">
-                {language === "en"
-                  ? "Explore"
-                  : language === "tr"
-                  ? "Keşfet"
-                  : "مشاهده"}{" "}
-                →
-              </a>
-            </div>
+  <ExploreButton
+    text={
+      language === "en"
+        ? "Explore"
+        : language === "tr"
+        ? "Keşfet"
+        : "مشاهده"
+    }
+    href="/courses/general-english-a2"
+  />
+</div>
           </div>
 
           {/* B1 */}
@@ -504,19 +541,21 @@ export default function Home() {
             </div>
 
             <div className="course-bottom">
-              <strong>
-                {t.courseB1.level}
-              </strong>
+  <strong>
+    {t.courseB1.level}
+  </strong>
 
-              <a href="/courses/general-english-b1">
-                {language === "en"
-                  ? "Explore"
-                  : language === "tr"
-                  ? "Keşfet"
-                  : "مشاهده"}{" "}
-                →
-              </a>
-            </div>
+  <ExploreButton
+    text={
+      language === "en"
+        ? "Explore"
+        : language === "tr"
+        ? "Keşfet"
+        : "مشاهده"
+    }
+    href="/courses/general-english-b1"
+  />
+</div>
           </div>
 
           {/* B2 */}
@@ -546,19 +585,21 @@ export default function Home() {
             </div>
 
             <div className="course-bottom">
-              <strong>
-                {t.courseB2.level}
-              </strong>
+  <strong>
+    {t.courseB2.level}
+  </strong>
 
-              <a href="/courses/general-english-b2">
-                {language === "en"
-                  ? "Explore"
-                  : language === "tr"
-                  ? "Keşfet"
-                  : "مشاهده"}{" "}
-                →
-              </a>
-            </div>
+  <ExploreButton
+    text={
+      language === "en"
+        ? "Explore"
+        : language === "tr"
+        ? "Keşfet"
+        : "مشاهده"
+    }
+    href="/courses/general-english-b2"
+  />
+</div>
           </div>
         </div>
       </section>
@@ -731,14 +772,40 @@ export default function Home() {
     </span>
 
     <span
-      style={{
-        flexShrink: 0,
-        marginLeft: "4px",
-        fontSize: "21px",
-      }}
-    >
-      →
-    </span>
+  style={{
+    position: "relative",
+    width: "17px",
+    height: "14px",
+    display: "block",
+    flexShrink: 0,
+    marginLeft: "4px",
+  }}
+>
+  <span
+    style={{
+      position: "absolute",
+      left: "0",
+      top: "6px",
+      width: "13px",
+      height: "2px",
+      background: "#ffffff",
+      borderRadius: "2px",
+    }}
+  />
+
+  <span
+    style={{
+      position: "absolute",
+      right: "0",
+      top: "3px",
+      width: "7px",
+      height: "7px",
+      borderTop: "2px solid #ffffff",
+      borderRight: "2px solid #ffffff",
+      transform: "rotate(45deg)",
+    }}
+  />
+</span>
   </a>
 
   {/* Instagram */}
@@ -787,14 +854,40 @@ export default function Home() {
     </span>
 
     <span
-      style={{
-        flexShrink: 0,
-        marginLeft: "4px",
-        fontSize: "21px",
-      }}
-    >
-      →
-    </span>
+  style={{
+    position: "relative",
+    width: "17px",
+    height: "14px",
+    display: "block",
+    flexShrink: 0,
+    marginLeft: "4px",
+  }}
+>
+  <span
+    style={{
+      position: "absolute",
+      left: "0",
+      top: "6px",
+      width: "13px",
+      height: "2px",
+      background: "#ffffff",
+      borderRadius: "2px",
+    }}
+  />
+
+  <span
+    style={{
+      position: "absolute",
+      right: "0",
+      top: "3px",
+      width: "7px",
+      height: "7px",
+      borderTop: "2px solid #ffffff",
+      borderRight: "2px solid #ffffff",
+      transform: "rotate(45deg)",
+    }}
+  />
+</span>
   </a>
 </div>
           </div>
@@ -864,22 +957,19 @@ export default function Home() {
       }}
     >
       {/* Stative Verbs */}
-      <Link
-        href="/toolkit/stative-verbs"
-        style={{
-          textDecoration: "none",
-          color: "inherit",
-          background: "#f8fafc",
-          border: "1px solid #e5e7eb",
-          borderRadius: "20px",
-          padding: "35px",
-          minHeight: "260px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
-        }}
-      >
+      <article
+  style={{
+    background: "#f8fafc",
+    border: "1px solid #e5e7eb",
+    borderRadius: "20px",
+    padding: "35px",
+    minHeight: "260px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
+  }}
+>
         <div>
           <div
             style={{
@@ -920,34 +1010,26 @@ export default function Home() {
           </p>
         </div>
 
-        <span
-          style={{
-            marginTop: "25px",
-            color: "#2563eb",
-            fontWeight: 600,
-          }}
-        >
-          Practice Stative Verbs →
-        </span>
-      </Link>
+        <ExploreButton
+  text="Practice Stative Verbs"
+  href="/toolkit/stative-verbs"
+/>
+</article>
 
       {/* Irregular Verbs */}
-      <Link
-        href="/toolkit/irregular-verbs"
-        style={{
-          textDecoration: "none",
-          color: "inherit",
-          background: "#f8fafc",
-          border: "1px solid #e5e7eb",
-          borderRadius: "20px",
-          padding: "35px",
-          minHeight: "260px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
-        }}
-      >
+      <article
+  style={{
+    background: "#f8fafc",
+    border: "1px solid #e5e7eb",
+    borderRadius: "20px",
+    padding: "35px",
+    minHeight: "260px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    boxShadow: "0 8px 30px rgba(15, 23, 42, 0.05)",
+  }}
+>
         <div>
           <div
             style={{
@@ -988,16 +1070,11 @@ export default function Home() {
           </p>
         </div>
 
-        <span
-          style={{
-            marginTop: "25px",
-            color: "#2563eb",
-            fontWeight: 600,
-          }}
-        >
-          Practice Irregular Verbs →
-        </span>
-      </Link>
+        <ExploreButton
+  text="Practice Irregular Verbs"
+  href="/toolkit/irregular-verbs"
+/>
+      </article>
     </div>
   </div>
 </section>
@@ -1155,8 +1232,10 @@ export default function Home() {
             fontWeight: 600,
           }}
         >
-          Explore Resources →
-        </span>
+<ExploreButton
+  text="Explore Resources"
+  href="/resources"
+/>        </span>
       </Link>
 
       {/* Listening & Speaking */}
@@ -1364,8 +1443,41 @@ export default function Home() {
     </small>
   </span>
 
-  <span className="whatsapp-support-arrow">→</span>
-</a>
+<span
+  style={{
+    position: "relative",
+    width: "17px",
+    height: "14px",
+    display: "block",
+    flexShrink: 0,
+    marginLeft: "4px",
+  }}
+>
+  <span
+    style={{
+      position: "absolute",
+      left: "0",
+      top: "6px",
+      width: "13px",
+      height: "2px",
+      background: "#ffffff",
+      borderRadius: "2px",
+    }}
+  />
+
+  <span
+    style={{
+      position: "absolute",
+      right: "0",
+      top: "3px",
+      width: "7px",
+      height: "7px",
+      borderTop: "2px solid #ffffff",
+      borderRight: "2px solid #ffffff",
+      transform: "rotate(45deg)",
+    }}
+  />
+</span></a>
       {/* =========================
           FOOTER
       ========================== */}

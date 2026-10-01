@@ -2,92 +2,107 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import ExploreButton from "../../../components/ExploreButton";
 
 const categories = [
   {
     title: "People & Personality",
-    description: "Words for describing people, appearance, and personality.",
+    description:
+      "Words for describing people, appearance, and personality.",
     image: "/images/a2/people-personality.png",
     href: "/exercises/vocabulary/a2/people-personality",
   },
   {
     title: "Jobs & Work",
-    description: "Vocabulary about jobs, workplaces, and work activities.",
+    description:
+      "Vocabulary about jobs, workplaces, and work activities.",
     image: "/images/a2/jobs-work.png",
     href: "/exercises/vocabulary/a2/jobs-work",
   },
   {
     title: "Daily Life & Habits",
-    description: "Vocabulary for routines, habits, and everyday activities.",
+    description:
+      "Vocabulary for routines, habits, and everyday activities.",
     image: "/images/a2/daily-life-habits.png",
     href: "/exercises/vocabulary/a2/daily-life-habits",
   },
   {
     title: "Health & Lifestyle",
-    description: "Words for health, common problems, and healthy living.",
+    description:
+      "Words for health, common problems, and healthy living.",
     image: "/images/a2/health-lifestyle.png",
     href: "/exercises/vocabulary/a2/health-lifestyle",
   },
   {
     title: "Food & Cooking",
-    description: "Vocabulary for ingredients, cooking, food, and tastes.",
+    description:
+      "Vocabulary for ingredients, cooking, food, and tastes.",
     image: "/images/a2/food-cooking.png",
     href: "/exercises/vocabulary/a2/food-cooking",
   },
   {
     title: "Travel & Holidays",
-    description: "Useful vocabulary for trips, hotels, airports, and holidays.",
+    description:
+      "Useful vocabulary for trips, hotels, airports, and holidays.",
     image: "/images/a2/travel-holidays.png",
     href: "/exercises/vocabulary/a2/travel-holidays",
   },
   {
     title: "City & Services",
-    description: "Vocabulary for places, services, and everyday city life.",
+    description:
+      "Vocabulary for places, services, and everyday city life.",
     image: "/images/a2/city-services.png",
     href: "/exercises/vocabulary/a2/city-services",
   },
   {
     title: "Shopping & Fashion",
-    description: "Words for shopping, clothes, sizes, prices, and discounts.",
+    description:
+      "Words for shopping, clothes, sizes, prices, and discounts.",
     image: "/images/a2/shopping-fashion.png",
     href: "/exercises/vocabulary/a2/shopping-fashion",
   },
   {
     title: "House & Chores",
-    description: "Vocabulary for homes, household items, and chores.",
+    description:
+      "Vocabulary for homes, household items, and chores.",
     image: "/images/a2/house-chores.png",
     href: "/exercises/vocabulary/a2/house-chores",
   },
   {
     title: "Education & Learning",
-    description: "Words related to school, classes, exams, and learning.",
+    description:
+      "Words related to school, classes, exams, and learning.",
     image: "/images/a2/education-learning.png",
     href: "/exercises/vocabulary/a2/education-learning",
   },
   {
     title: "Technology & Communication",
-    description: "Vocabulary for phones, computers, internet, and communication.",
+    description:
+      "Vocabulary for phones, computers, internet, and communication.",
     image: "/images/a2/technology-communication.png",
     href: "/exercises/vocabulary/a2/technology-communication",
   },
   {
     title: "Nature & Environment",
-    description: "Words for nature, animals, weather, and the environment.",
+    description:
+      "Words for nature, animals, weather, and the environment.",
     image: "/images/a2/nature-environment.png",
     href: "/exercises/vocabulary/a2/nature-environment",
   },
   {
     title: "Free Time & Entertainment",
-    description: "Vocabulary for hobbies, films, music, sports, and entertainment.",
+    description:
+      "Vocabulary for hobbies, films, music, sports, and entertainment.",
     image: "/images/a2/free-time-entertainment.png",
     href: "/exercises/vocabulary/a2/free-time-entertainment",
   },
   {
-  title: "Feelings & Everyday Situations",
-  description: "Useful words for feelings and common social situations.",
-  image: "/images/a2/feelings-everyday-situations.png",
-  href: "/exercises/vocabulary/a2/feelings-everyday-situations",
-},
+    title: "Feelings & Everyday Situations",
+    description:
+      "Useful words for feelings and common social situations.",
+    image: "/images/a2/feelings-everyday-situations.png",
+    href: "/exercises/vocabulary/a2/feelings-everyday-situations",
+  },
 ];
 
 export default function A2VocabularyPage() {
@@ -117,7 +132,7 @@ export default function A2VocabularyPage() {
               fontSize: "14px",
               fontWeight: 800,
               letterSpacing: "2px",
-              color: "#2563eb",
+              color: "#0645E5",
               marginBottom: "12px",
             }}
           >
@@ -153,96 +168,81 @@ export default function A2VocabularyPage() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "24px",
           }}
         >
           {categories.map((category) => (
-            <Link
+            <div
               key={category.title}
-              href={category.href}
               style={{
-                textDecoration: "none",
-                color: "inherit",
+                background: "#ffffff",
+                borderRadius: "20px",
+                padding: "18px",
+                boxShadow:
+                  "0 8px 30px rgba(15, 23, 42, 0.07)",
+                border: "1px solid #edf0f5",
+                transition:
+                  "transform 0.2s ease, box-shadow 0.2s ease",
+                height: "100%",
+                boxSizing: "border-box",
               }}
             >
+              {/* Image */}
               <div
                 style={{
-                  background: "#ffffff",
-                  borderRadius: "20px",
-                  padding: "18px",
-                  boxShadow: "0 8px 30px rgba(15, 23, 42, 0.07)",
-                  border: "1px solid #edf0f5",
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                  height: "100%",
-                  boxSizing: "border-box",
+                  width: "100%",
+                  height: "170px",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  background: "#eef5ff",
+                  position: "relative",
+                  marginBottom: "20px",
                 }}
               >
-                {/* Image */}
-                <div
+                <Image
+                  src={category.image}
+                  alt={category.title}
+                  fill
+                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   style={{
-                    width: "100%",
-                    height: "170px",
-                    borderRadius: "16px",
-                    overflow: "hidden",
-                    background: "#eef5ff",
-                    position: "relative",
-                    marginBottom: "20px",
+                    objectFit: "cover",
                   }}
-                >
-                  <Image
-  src={category.image}
-  alt={category.title}
-  fill
-  unoptimized
-  sizes="(max-width: 768px) 100vw, 33vw"
-  style={{
-    objectFit: "cover",
-  }}
-/>
-                </div>
-
-                {/* Title */}
-                <h2
-                  style={{
-                    margin: "0 0 10px",
-                    fontSize: "21px",
-                    fontWeight: 800,
-                    color: "#111827",
-                  }}
-                >
-                  {category.title}
-                </h2>
-
-                {/* Description */}
-                <p
-                  style={{
-                    margin: 0,
-                    fontSize: "14px",
-                    lineHeight: 1.7,
-                    color: "#6b7280",
-                  }}
-                >
-                  {category.description}
-                </p>
-
-                {/* Button */}
-                <div
-                  style={{
-                    marginTop: "20px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "7px",
-                    fontSize: "14px",
-                    fontWeight: 700,
-                    color: "#2563eb",
-                  }}
-                >
-                  Start Exercise
-                  <span>→</span>
-                </div>
+                />
               </div>
-            </Link>
+
+              {/* Title */}
+              <h2
+                style={{
+                  margin: "0 0 10px",
+                  fontSize: "21px",
+                  fontWeight: 800,
+                  color: "#111827",
+                }}
+              >
+                {category.title}
+              </h2>
+
+              {/* Description */}
+              <p
+                style={{
+                  margin: "0 0 22px",
+                  fontSize: "14px",
+                  lineHeight: 1.7,
+                  color: "#6b7280",
+                }}
+              >
+                {category.description}
+              </p>
+
+              {/* Explore Button */}
+              <ExploreButton
+                text="Start Exercise"
+                href={category.href}
+              />
+            </div>
           ))}
         </div>
 

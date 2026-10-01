@@ -1,76 +1,89 @@
 import Link from "next/link";
+import ExploreButton from "../../../components/ExploreButton";
 
 const readings = [
   {
     number: 1,
     title: "My Daily Routine",
-    description: "Read about a simple daily routine and answer the questions.",
+    description:
+      "Read about a simple daily routine and answer the questions.",
     href: "/exercises/reading/a1/my-daily-routine",
   },
   {
     number: 2,
     title: "My Family",
-    description: "Meet a family and learn about their everyday life.",
+    description:
+      "Meet a family and learn about their everyday life.",
     href: "/exercises/reading/a1/my-family",
   },
   {
     number: 3,
     title: "My Best Friend",
-    description: "Read about friendship, hobbies, and everyday activities.",
+    description:
+      "Read about friendship, hobbies, and everyday activities.",
     href: "/exercises/reading/a1/my-best-friend",
   },
   {
     number: 4,
     title: "At School",
-    description: "Learn about a student's school day and classroom activities.",
+    description:
+      "Learn about a student's school day and classroom activities.",
     href: "/exercises/reading/a1/at-school",
   },
   {
     number: 5,
     title: "My House",
-    description: "Read about a home, its rooms, and the people who live there.",
+    description:
+      "Read about a home, its rooms, and the people who live there.",
     href: "/exercises/reading/a1/my-house",
   },
   {
     number: 6,
     title: "My Favorite Food",
-    description: "Read about favorite foods, meals, and eating habits.",
+    description:
+      "Read about favorite foods, meals, and eating habits.",
     href: "/exercises/reading/a1/my-favorite-food",
   },
   {
     number: 7,
     title: "A Day at the Park",
-    description: "Follow a family spending a fun day at the park.",
+    description:
+      "Follow a family spending a fun day at the park.",
     href: "/exercises/reading/a1/a-day-at-the-park",
   },
   {
     number: 8,
     title: "My Weekend",
-    description: "Read about weekend plans and free-time activities.",
+    description:
+      "Read about weekend plans and free-time activities.",
     href: "/exercises/reading/a1/my-weekend",
   },
   {
     number: 9,
     title: "My Pet",
-    description: "Read about a pet and the daily responsibilities of caring for it.",
+    description:
+      "Read about a pet and the daily responsibilities of caring for it.",
     href: "/exercises/reading/a1/my-pet",
   },
   {
     number: 10,
     title: "A Trip to the Beach",
-    description: "Read about a simple beach trip with family and friends.",
+    description:
+      "Read about a simple beach trip with family and friends.",
     href: "/exercises/reading/a1/a-trip-to-the-beach",
   },
   {
     number: 11,
     title: "My Favorite Season",
-    description: "Read about the weather, activities, and favorite seasons.",
+    description:
+      "Read about the weather, activities, and favorite seasons.",
     href: "/exercises/reading/a1/my-favorite-season",
   },
   {
     number: 12,
     title: "A Birthday Party",
-    description: "Read about a birthday party and what happens during the celebration.",
+    description:
+      "Read about a birthday party and what happens during the celebration.",
     href: "/exercises/reading/a1/a-birthday-party",
   },
 ];
@@ -90,6 +103,7 @@ export default function A1ReadingPage() {
           margin: "0 auto",
         }}
       >
+        {/* BACK TO READING */}
         <div style={{ marginBottom: "30px" }}>
           <Link
             href="/exercises/reading"
@@ -104,6 +118,7 @@ export default function A1ReadingPage() {
           </Link>
         </div>
 
+        {/* HEADER */}
         <header
           style={{
             textAlign: "center",
@@ -155,89 +170,84 @@ export default function A1ReadingPage() {
           </p>
         </header>
 
+        {/* READING CARDS */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gridTemplateColumns:
+              "repeat(3, minmax(0, 1fr))",
             gap: "24px",
           }}
         >
           {readings.map((reading) => (
-            <Link
+            <article
               key={reading.number}
-              href={reading.href}
               style={{
-                textDecoration: "none",
-                color: "inherit",
+                height: "100%",
+                minHeight: "230px",
+                boxSizing: "border-box",
+                background: "#ffffff",
+                border: "1px solid #e3e9f2",
+                borderRadius: "18px",
+                padding: "28px",
+                boxShadow:
+                  "0 10px 28px rgba(30, 60, 100, 0.05)",
               }}
             >
-              <article
+              {/* NUMBER */}
+              <div
                 style={{
-                  height: "100%",
-                  minHeight: "230px",
-                  boxSizing: "border-box",
-                  background: "#ffffff",
-                  border: "1px solid #e3e9f2",
-                  borderRadius: "18px",
-                  padding: "28px",
-                  boxShadow: "0 10px 28px rgba(30, 60, 100, 0.05)",
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "10px",
+                  background: "#edf4ff",
+                  color: "#2f6df6",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "15px",
+                  fontWeight: 800,
+                  marginBottom: "22px",
                 }}
               >
-                <div
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "10px",
-                    background: "#edf4ff",
-                    color: "#2f6df6",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "15px",
-                    fontWeight: 800,
-                    marginBottom: "22px",
-                  }}
-                >
-                  {reading.number}
-                </div>
+                {reading.number}
+              </div>
 
-                <h2
-                  style={{
-                    margin: 0,
-                    color: "#173b78",
-                    fontSize: "21px",
-                    lineHeight: 1.35,
-                    fontWeight: 800,
-                  }}
-                >
-                  {reading.title}
-                </h2>
+              {/* TITLE */}
+              <h2
+                style={{
+                  margin: 0,
+                  color: "#173b78",
+                  fontSize: "21px",
+                  lineHeight: 1.35,
+                  fontWeight: 800,
+                }}
+              >
+                {reading.title}
+              </h2>
 
-                <p
-                  style={{
-                    margin: "14px 0 22px",
-                    color: "#607796",
-                    fontSize: "15px",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  {reading.description}
-                </p>
+              {/* DESCRIPTION */}
+              <p
+                style={{
+                  margin: "14px 0 22px",
+                  color: "#607796",
+                  fontSize: "15px",
+                  lineHeight: 1.65,
+                }}
+              >
+                {reading.description}
+              </p>
 
-                <div
-                  style={{
-                    color: "#2f6df6",
-                    fontSize: "14px",
-                    fontWeight: 700,
-                  }}
-                >
-                  Start Reading &rarr;
-                </div>
-              </article>
-            </Link>
+              {/* EXPLORE BUTTON */}
+              <ExploreButton
+                text="Start Reading"
+                href={reading.href}
+              />
+            </article>
           ))}
         </div>
 
+        {/* BACK TO EXERCISES */}
         <div
           style={{
             textAlign: "center",

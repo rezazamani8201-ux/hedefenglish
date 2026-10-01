@@ -1,6 +1,30 @@
 "use client";
 
 import Link from "next/link";
+import ExploreButton from "../components/ExploreButton";
+
+const exerciseCategories = [
+  {
+    title: "Grammar Exercises",
+    description: "Grammar practice worksheets and PDF exercises.",
+    href: "/exercises/grammar",
+    exploreText: "Explore Grammar",
+  },
+  {
+    title: "Vocabulary Exercises",
+    description:
+      "Build your vocabulary with level-based interactive exercises.",
+    href: "/exercises/vocabulary",
+    exploreText: "Explore Vocabulary",
+  },
+  {
+    title: "Reading Exercises",
+    description:
+      "Reading practice and PDF worksheets for different levels.",
+    href: "/exercises/reading",
+    exploreText: "Explore Reading",
+  },
+];
 
 export default function Exercises() {
   return (
@@ -62,11 +86,16 @@ export default function Exercises() {
           padding: "70px 6% 0",
         }}
       >
-        <div style={{ textAlign: "center", marginBottom: "50px" }}>
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: "50px",
+          }}
+        >
           <p
             style={{
               margin: "0 0 12px",
-              color: "#3b82f6",
+              color: "#0645E5",
               fontSize: "13px",
               fontWeight: 800,
               letterSpacing: "1.5px",
@@ -108,113 +137,59 @@ export default function Exercises() {
             gap: "22px",
           }}
         >
-          <Link
-            href="/exercises/grammar"
+          {exerciseCategories.map((item) => (
+            <article
+              key={item.title}
+              style={{
+                background: "#ffffff",
+                border: "1px solid #e8edf3",
+                borderRadius: "16px",
+                padding: "28px",
+                boxShadow:
+                  "0 8px 25px rgba(23, 59, 120, 0.05)",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <h2
+                style={{
+                  margin: "0 0 10px",
+                  color: "#173b78",
+                  fontSize: "21px",
+                }}
+              >
+                {item.title}
+              </h2>
+
+              <p
+                style={{
+                  margin: "0 0 24px",
+                  color: "#64748b",
+                  lineHeight: 1.6,
+                  flex: 1,
+                }}
+              >
+                {item.description}
+              </p>
+
+              <ExploreButton
+                text={item.exploreText}
+                href={item.href}
+              />
+            </article>
+          ))}
+
+          {/* LISTENING & SPEAKING */}
+          <article
             style={{
               background: "#ffffff",
               border: "1px solid #e8edf3",
               borderRadius: "16px",
               padding: "28px",
-              boxShadow: "0 8px 25px rgba(23, 59, 120, 0.05)",
-              textDecoration: "none",
-              display: "block",
-            }}
-          >
-            <h2
-              style={{
-                margin: "0 0 10px",
-                color: "#173b78",
-                fontSize: "21px",
-              }}
-            >
-              Grammar Exercises
-            </h2>
-
-            <p
-              style={{
-                margin: 0,
-                color: "#64748b",
-                lineHeight: 1.6,
-              }}
-            >
-              Grammar practice worksheets and PDF exercises.
-            </p>
-          </Link>
-
-          <Link
-            href="/exercises/vocabulary"
-            style={{
-              background: "#ffffff",
-              border: "1px solid #e8edf3",
-              borderRadius: "16px",
-              padding: "28px",
-              boxShadow: "0 8px 25px rgba(23, 59, 120, 0.05)",
-              textDecoration: "none",
-              display: "block",
-            }}
-          >
-            <h2
-              style={{
-                margin: "0 0 10px",
-                color: "#173b78",
-                fontSize: "21px",
-              }}
-            >
-              Vocabulary Exercises
-            </h2>
-
-            <p
-              style={{
-                margin: 0,
-                color: "#64748b",
-                lineHeight: 1.6,
-              }}
-            >
-              Build your vocabulary with level-based interactive exercises.
-            </p>
-          </Link>
-
-          {/* READING */}
-          <Link
-            href="/exercises/reading"
-            style={{
-              background: "#ffffff",
-              border: "1px solid #e8edf3",
-              borderRadius: "16px",
-              padding: "28px",
-              boxShadow: "0 8px 25px rgba(23, 59, 120, 0.05)",
-              textDecoration: "none",
-              display: "block",
-            }}
-          >
-            <h2
-              style={{
-                margin: "0 0 10px",
-                color: "#173b78",
-                fontSize: "21px",
-              }}
-            >
-              Reading Exercises
-            </h2>
-
-            <p
-              style={{
-                margin: 0,
-                color: "#64748b",
-                lineHeight: 1.6,
-              }}
-            >
-              Reading practice and PDF worksheets for different levels.
-            </p>
-          </Link>
-
-          <div
-            style={{
-              background: "#ffffff",
-              border: "1px solid #e8edf3",
-              borderRadius: "16px",
-              padding: "28px",
-              boxShadow: "0 8px 25px rgba(23, 59, 120, 0.05)",
+              boxShadow:
+                "0 8px 25px rgba(23, 59, 120, 0.05)",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <h2
@@ -229,14 +204,25 @@ export default function Exercises() {
 
             <p
               style={{
-                margin: 0,
+                margin: "0 0 24px",
                 color: "#64748b",
                 lineHeight: 1.6,
+                flex: 1,
               }}
             >
               Listening and speaking practice materials.
             </p>
-          </div>
+
+            <div
+              style={{
+                color: "#94a3b8",
+                fontSize: "14px",
+                fontWeight: 600,
+              }}
+            >
+              Coming Soon
+            </div>
+          </article>
         </div>
       </section>
     </main>

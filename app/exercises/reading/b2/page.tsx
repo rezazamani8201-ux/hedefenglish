@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ExploreButton from "../../../components/ExploreButton";
 
 const readings = [
   {
@@ -90,6 +91,7 @@ export default function B2ReadingPage() {
           margin: "0 auto",
         }}
       >
+        {/* BACK TO READING */}
         <Link
           href="/exercises/reading"
           style={{
@@ -106,6 +108,7 @@ export default function B2ReadingPage() {
           &larr; Back to Reading
         </Link>
 
+        {/* HEADER */}
         <div
           style={{
             textAlign: "center",
@@ -152,75 +155,79 @@ export default function B2ReadingPage() {
           </p>
         </div>
 
+        {/* READING CARDS */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "22px",
           }}
         >
           {readings.map((reading, index) => (
-            <Link
+            <article
               key={reading.slug}
-              href={`/exercises/reading/b2/${reading.slug}`}
               style={{
-                textDecoration: "none",
-                color: "inherit",
+                background: "#ffffff",
+                border: "1px solid #e5e7eb",
+                borderRadius: "18px",
+                padding: "26px",
+                minHeight: "190px",
+                boxShadow:
+                  "0 4px 14px rgba(15, 23, 42, 0.06)",
+                transition:
+                  "transform 0.2s ease, box-shadow 0.2s ease",
               }}
             >
+              {/* NUMBER */}
               <div
                 style={{
-                  background: "#ffffff",
-                  border: "1px solid #e5e7eb",
-                  borderRadius: "18px",
-                  padding: "26px",
-                  minHeight: "190px",
-                  boxShadow: "0 4px 14px rgba(15, 23, 42, 0.06)",
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                  cursor: "pointer",
+                  width: "42px",
+                  height: "42px",
+                  borderRadius: "12px",
+                  background: "#eef2ff",
+                  color: "#4f46e5",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: 800,
+                  fontSize: "16px",
+                  marginBottom: "18px",
                 }}
               >
-                <div
-                  style={{
-                    width: "42px",
-                    height: "42px",
-                    borderRadius: "12px",
-                    background: "#eef2ff",
-                    color: "#4f46e5",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontWeight: 800,
-                    fontSize: "16px",
-                    marginBottom: "18px",
-                  }}
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <h2
-                  style={{
-                    fontSize: "21px",
-                    fontWeight: 750,
-                    color: "#111827",
-                    margin: "0 0 10px",
-                  }}
-                >
-                  {reading.title}
-                </h2>
-
-                <p
-                  style={{
-                    color: "#6b7280",
-                    fontSize: "14px",
-                    lineHeight: 1.65,
-                    margin: 0,
-                  }}
-                >
-                  {reading.description}
-                </p>
+                {String(index + 1).padStart(2, "0")}
               </div>
-            </Link>
+
+              {/* TITLE */}
+              <h2
+                style={{
+                  fontSize: "21px",
+                  fontWeight: 750,
+                  color: "#111827",
+                  margin: "0 0 10px",
+                }}
+              >
+                {reading.title}
+              </h2>
+
+              {/* DESCRIPTION */}
+              <p
+                style={{
+                  color: "#6b7280",
+                  fontSize: "14px",
+                  lineHeight: 1.65,
+                  margin: "0 0 20px",
+                }}
+              >
+                {reading.description}
+              </p>
+
+              {/* EXPLORE BUTTON */}
+              <ExploreButton
+                text="Start Reading"
+                href={`/exercises/reading/b2/${reading.slug}`}
+              />
+            </article>
           ))}
         </div>
       </div>

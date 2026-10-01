@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import ExploreButton from "../../../components/ExploreButton";
 
 const topics = [
   {
@@ -126,6 +127,7 @@ export default function B2VocabularyPage() {
         paddingBottom: "80px",
       }}
     >
+      {/* HEADER */}
       <header
         style={{
           background: "#ffffff",
@@ -168,6 +170,7 @@ export default function B2VocabularyPage() {
         </div>
       </header>
 
+      {/* CONTENT */}
       <div
         style={{
           maxWidth: "1100px",
@@ -175,6 +178,7 @@ export default function B2VocabularyPage() {
           padding: "60px 6%",
         }}
       >
+        {/* TITLE */}
         <div
           style={{
             textAlign: "center",
@@ -183,7 +187,7 @@ export default function B2VocabularyPage() {
         >
           <p
             style={{
-              color: "#3b82f6",
+              color: "#0645E5",
               fontWeight: 800,
               letterSpacing: "1.5px",
               fontSize: "13px",
@@ -218,107 +222,104 @@ export default function B2VocabularyPage() {
           </p>
         </div>
 
+        {/* TOPICS GRID */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "22px",
           }}
         >
           {topics.map((topic) => (
-            <Link
+            <div
               key={topic.number}
-              href={topic.href}
               style={{
-                textDecoration: "none",
-                color: "inherit",
+                background: "#ffffff",
+                border: "1px solid #e2e8f0",
+                borderRadius: "18px",
+                overflow: "hidden",
+                height: "100%",
+                boxSizing: "border-box",
+                transition: "all 0.2s ease",
+                boxShadow:
+                  "0 4px 15px rgba(15, 23, 42, 0.04)",
               }}
             >
+              {/* IMAGE */}
               <div
                 style={{
-                  background: "#ffffff",
-                  border: "1px solid #e2e8f0",
-                  borderRadius: "18px",
+                  width: "100%",
+                  height: "190px",
                   overflow: "hidden",
-                  height: "100%",
-                  boxSizing: "border-box",
-                  transition: "all 0.2s ease",
-                  boxShadow: "0 4px 15px rgba(15, 23, 42, 0.04)",
                 }}
               >
-                <div
+                <img
+                  src={topic.image}
+                  alt={topic.title}
                   style={{
                     width: "100%",
-                    height: "190px",
-                    overflow: "hidden",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
                   }}
-                >
-                  <img
-                    src={topic.image}
-                    alt={topic.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                    }}
-                  />
-                </div>
+                />
+              </div>
 
+              {/* CARD CONTENT */}
+              <div
+                style={{
+                  padding: "24px",
+                }}
+              >
+                {/* NUMBER */}
                 <div
                   style={{
-                    padding: "24px",
+                    color: "#0645E5",
+                    fontWeight: 800,
+                    fontSize: "13px",
+                    marginBottom: "8px",
                   }}
                 >
-                  <div
-                    style={{
-                      color: "#3b82f6",
-                      fontWeight: 800,
-                      fontSize: "13px",
-                      marginBottom: "8px",
-                    }}
-                  >
-                    B2 • {topic.number}
-                  </div>
-
-                  <h2
-                    style={{
-                      color: "#13294b",
-                      fontSize: "20px",
-                      lineHeight: 1.35,
-                      margin: "0 0 12px",
-                      fontWeight: 800,
-                    }}
-                  >
-                    {topic.title}
-                  </h2>
-
-                  <p
-                    style={{
-                      color: "#64748b",
-                      fontSize: "14px",
-                      lineHeight: 1.7,
-                      margin: "0 0 22px",
-                    }}
-                  >
-                    {topic.description}
-                  </p>
-
-                  <div
-                    style={{
-                      color: "#2563eb",
-                      fontWeight: 700,
-                      fontSize: "14px",
-                    }}
-                  >
-                    Explore Topic &rarr;
-                  </div>
+                  B2 • {topic.number}
                 </div>
+
+                {/* TITLE */}
+                <h2
+                  style={{
+                    color: "#13294b",
+                    fontSize: "20px",
+                    lineHeight: 1.35,
+                    margin: "0 0 12px",
+                    fontWeight: 800,
+                  }}
+                >
+                  {topic.title}
+                </h2>
+
+                {/* DESCRIPTION */}
+                <p
+                  style={{
+                    color: "#64748b",
+                    fontSize: "14px",
+                    lineHeight: 1.7,
+                    margin: "0 0 22px",
+                  }}
+                >
+                  {topic.description}
+                </p>
+
+                {/* EXPLORE BUTTON */}
+                <ExploreButton
+                  text="Explore Topic"
+                  href={topic.href}
+                />
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
+        {/* BOTTOM LINK */}
         <div
           style={{
             textAlign: "center",

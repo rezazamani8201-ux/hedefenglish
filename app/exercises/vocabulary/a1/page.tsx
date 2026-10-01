@@ -1,8 +1,8 @@
 "use client";
+
 import Image from "next/image";
-
 import Link from "next/link";
-
+import ExploreButton from "../../../components/ExploreButton";
 const categories = [
   {
     title: "Family & Friends",
@@ -107,8 +107,8 @@ const categories = [
 export default function A1Vocabulary() {
   return (
     <main
-  className="a1-vocabulary-landing"
-  style={{
+      className="a1-vocabulary-landing"
+      style={{
         minHeight: "100vh",
         background: "#f8fbff",
         paddingBottom: "80px",
@@ -172,7 +172,7 @@ export default function A1Vocabulary() {
           <p
             style={{
               margin: "0 0 12px",
-              color: "#3b82f6",
+              color: "#0645E5",
               fontSize: "13px",
               fontWeight: 800,
               letterSpacing: "1.5px",
@@ -214,106 +214,87 @@ export default function A1Vocabulary() {
           }}
         >
           {categories.map((category) => (
-            <Link
+            <div
               key={category.title}
-              href={category.href}
               style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "block",
                 height: "100%",
+                boxSizing: "border-box",
+                background: "#ffffff",
+                border: "1px solid #e8edf3",
+                borderRadius: "18px",
+                padding: "28px",
+                boxShadow:
+                  "0 8px 25px rgba(23, 59, 120, 0.05)",
               }}
             >
-              <div
-                style={{
-                  height: "100%",
-                  boxSizing: "border-box",
-                  background: "#ffffff",
-                  border: "1px solid #e8edf3",
-                  borderRadius: "18px",
-                  padding: "28px",
-                  boxShadow:
-                    "0 8px 25px rgba(23, 59, 120, 0.05)",
-                  transition:
-                    "transform 0.2s ease, box-shadow 0.2s ease",
-                  cursor: "pointer",
-                }}
-              >
-                {category.image ? (
-  <div
-    style={{
-      width: "100%",
-      height: "120px",
-      borderRadius: "14px",
-      overflow: "hidden",
-      marginBottom: "20px",
-      background: "#eef5ff",
-      position: "relative",
-    }}
-  >
-    <Image
-      src={category.image}
-      alt={category.title}
-      fill
-      sizes="(max-width: 768px) 100vw, 33vw"
-      style={{
-        objectFit: "cover",
-      }}
-    />
-  </div>
-) : (
-  <div
-    style={{
-      width: "52px",
-      height: "52px",
-      borderRadius: "14px",
-      background: "#eef5ff",
-      color: "#2563eb",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontSize: "20px",
-      fontWeight: 800,
-      marginBottom: "20px",
-    }}
-  >
-    {category.title.charAt(0)}
-  </div>
-)}
-
-                <h2
-                  style={{
-                    margin: "0 0 10px",
-                    color: "#173b78",
-                    fontSize: "21px",
-                  }}
-                >
-                  {category.title}
-                </h2>
-
-                <p
-                  style={{
-                    margin: 0,
-                    color: "#64748b",
-                    lineHeight: 1.65,
-                    fontSize: "15px",
-                  }}
-                >
-                  {category.description}
-                </p>
-
+              {category.image ? (
                 <div
                   style={{
-                    marginTop: "22px",
-                    color: "#2563eb",
-                    fontSize: "14px",
-                    fontWeight: 700,
+                    width: "100%",
+                    height: "120px",
+                    borderRadius: "14px",
+                    overflow: "hidden",
+                    marginBottom: "20px",
+                    background: "#eef5ff",
+                    position: "relative",
                   }}
                 >
-                  Start exercises →
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
                 </div>
-              </div>
-            </Link>
+              ) : (
+                <div
+                  style={{
+                    width: "52px",
+                    height: "52px",
+                    borderRadius: "14px",
+                    background: "#eef5ff",
+                    color: "#2563eb",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "20px",
+                    fontWeight: 800,
+                    marginBottom: "20px",
+                  }}
+                >
+                  {category.title.charAt(0)}
+                </div>
+              )}
+
+              <h2
+                style={{
+                  margin: "0 0 10px",
+                  color: "#173b78",
+                  fontSize: "21px",
+                }}
+              >
+                {category.title}
+              </h2>
+
+              <p
+                style={{
+                  margin: "0 0 22px",
+                  color: "#64748b",
+                  lineHeight: 1.65,
+                  fontSize: "15px",
+                }}
+              >
+                {category.description}
+              </p>
+
+              <ExploreButton
+                text="Start Exercises"
+                href={category.href}
+              />
+            </div>
           ))}
         </div>
       </section>

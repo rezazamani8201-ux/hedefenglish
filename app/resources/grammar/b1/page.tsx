@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import ExploreButton from "../../../components/ExploreButton";
 
 const topics = [
   ["Present Perfect vs Past Simple", "present-perfect-vs-past-simple"],
@@ -147,13 +148,9 @@ export default function B1GrammarPage() {
             }}
           >
             {topics.map(([title, slug], index) => (
-              <Link
+              <article
                 key={slug}
-                href={`/resources/grammar/b1/${slug}`}
                 style={{
-                  display: "block",
-                  textDecoration: "none",
-                  color: "inherit",
                   background: "#f8fafc",
                   border: "1px solid #e5eaf0",
                   borderRadius: "14px",
@@ -186,7 +183,7 @@ export default function B1GrammarPage() {
                     {index + 1}
                   </div>
 
-                  <div>
+                  <div style={{ flex: 1 }}>
                     <h3
                       style={{
                         margin: 0,
@@ -198,19 +195,15 @@ export default function B1GrammarPage() {
                       {title}
                     </h3>
 
-                    <span
-                      style={{
-                        display: "inline-block",
-                        marginTop: "6px",
-                        color: "#667085",
-                        fontSize: "13px",
-                      }}
-                    >
-                      Study this topic →
-                    </span>
+                    <div style={{ marginTop: "12px" }}>
+                      <ExploreButton
+                        text="Study this topic"
+                        href={`/resources/grammar/b1/${slug}`}
+                      />
+                    </div>
                   </div>
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
         </section>

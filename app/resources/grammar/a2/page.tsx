@@ -1,103 +1,120 @@
 "use client";
 
 import Link from "next/link";
+import ExploreButton from "../../../components/ExploreButton";
 
 const topics = [
   {
     number: 1,
     title: "Present & Past Simple",
     slug: "present-past-simple",
-    description: "Talk about routines, habits, finished actions, and past events.",
+    description:
+      "Talk about routines, habits, finished actions, and past events.",
   },
   {
     number: 2,
     title: "Present Continuous",
     slug: "present-continuous",
-    description: "Talk about actions happening now and temporary situations.",
+    description:
+      "Talk about actions happening now and temporary situations.",
   },
   {
     number: 3,
     title: "Future Plans",
     slug: "future-plans",
-    description: "Use common future forms to talk about plans and arrangements.",
+    description:
+      "Use common future forms to talk about plans and arrangements.",
   },
   {
     number: 4,
     title: "Comparatives & Superlatives",
     slug: "comparatives-superlatives",
-    description: "Compare people, places, things, and experiences.",
+    description:
+      "Compare people, places, things, and experiences.",
   },
   {
     number: 5,
     title: "Countable & Uncountable Nouns",
     slug: "countable-uncountable",
-    description: "Understand nouns that can and cannot be counted.",
+    description:
+      "Understand nouns that can and cannot be counted.",
   },
   {
     number: 6,
     title: "Some, Any, Much & Many",
     slug: "some-any-much-many",
-    description: "Talk about quantities in positive, negative, and question forms.",
+    description:
+      "Talk about quantities in positive, negative, and question forms.",
   },
   {
     number: 7,
     title: "Present Perfect",
     slug: "present-perfect",
-    description: "Talk about experiences and actions connected to the present.",
+    description:
+      "Talk about experiences and actions connected to the present.",
   },
   {
     number: 8,
     title: "Modal Verbs",
     slug: "modal-verbs",
-    description: "Use can, could, should, must, and have to in everyday English.",
+    description:
+      "Use can, could, should, must, and have to in everyday English.",
   },
   {
     number: 9,
     title: "Adverbs of Frequency",
     slug: "adverbs-of-frequency",
-    description: "Describe how often you do everyday activities.",
+    description:
+      "Describe how often you do everyday activities.",
   },
   {
     number: 10,
     title: "Everyday Situations",
     slug: "everyday-situations",
-    description: "Use practical grammar for common everyday situations.",
+    description:
+      "Use practical grammar for common everyday situations.",
   },
   {
     number: 11,
     title: "Travel & Shopping",
     slug: "travel-shopping",
-    description: "Use useful English for travel, shops, tickets, and prices.",
+    description:
+      "Use useful English for travel, shops, tickets, and prices.",
   },
   {
     number: 12,
     title: "Making Suggestions",
     slug: "making-suggestions",
-    description: "Make suggestions and respond to other people's ideas.",
+    description:
+      "Make suggestions and respond to other people's ideas.",
   },
   {
     number: 13,
     title: "Giving Opinions",
     slug: "giving-opinions",
-    description: "Express simple opinions and explain what you think.",
+    description:
+      "Express simple opinions and explain what you think.",
   },
   {
     number: 14,
     title: "Describing People & Places",
     slug: "describing-people-places",
-    description: "Describe appearance, personality, places, and surroundings.",
+    description:
+      "Describe appearance, personality, places, and surroundings.",
   },
   {
     number: 15,
     title: "Everyday Conversations",
     slug: "everyday-conversations",
-    description: "Build longer conversations using practical A2 grammar.",
+    description:
+      "Build longer conversations using practical A2 grammar.",
   },
   {
     number: 16,
     title: "Review & Communication",
     slug: "review-communication",
-    description: "Review key A2 grammar and use it in real communication.",
+    description:
+      "Review key A2 grammar and use it in real communication.",
   },
 ];
 
@@ -190,19 +207,14 @@ export default function A2GrammarPage() {
           }}
         >
           {topics.map((topic) => (
-            <Link
+            <article
               key={topic.slug}
-              href={`/resources/grammar/a2/${topic.slug}`}
               style={{
-                display: "block",
                 background: "#fff",
                 border: "1px solid #e5eaf0",
                 borderRadius: "16px",
                 padding: "24px",
-                textDecoration: "none",
-                color: "inherit",
                 boxShadow: "0 5px 18px rgba(0,0,0,0.03)",
-                transition: "transform 0.2s ease, box-shadow 0.2s ease",
               }}
             >
               <div
@@ -238,23 +250,17 @@ export default function A2GrammarPage() {
                   color: "#667085",
                   fontSize: "14px",
                   lineHeight: 1.7,
-                  margin: 0,
+                  margin: "0 0 18px",
                 }}
               >
                 {topic.description}
               </p>
 
-              <div
-                style={{
-                  marginTop: "18px",
-                  color: "#173b78",
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}
-              >
-                Open Lesson →
-              </div>
-            </Link>
+              <ExploreButton
+                text="Open Lesson"
+                href={`/resources/grammar/a2/${topic.slug}`}
+              />
+            </article>
           ))}
         </section>
 

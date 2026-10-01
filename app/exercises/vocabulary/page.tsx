@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import ExploreButton from "../../components/ExploreButton";
 
 const levels = [
   {
@@ -99,7 +100,7 @@ export default function VocabularyLevelsPage() {
         >
           <p
             style={{
-              color: "#3b82f6",
+              color: "#0645E5",
               fontWeight: 800,
               letterSpacing: "1.5px",
               fontSize: "13px",
@@ -141,76 +142,63 @@ export default function VocabularyLevelsPage() {
           }}
         >
           {levels.map((item) => (
-            <Link
+            <div
               key={item.level}
-              href={item.href}
               style={{
-                textDecoration: "none",
-                color: "inherit",
+                background: "#ffffff",
+                border: "1px solid #e2e8f0",
+                borderRadius: "18px",
+                padding: "30px",
+                height: "100%",
+                boxSizing: "border-box",
+                boxShadow: "0 4px 15px rgba(15, 23, 42, 0.04)",
               }}
             >
               <div
                 style={{
-                  background: "#ffffff",
-                  border: "1px solid #e2e8f0",
-                  borderRadius: "18px",
-                  padding: "30px",
-                  height: "100%",
-                  boxSizing: "border-box",
-                  boxShadow: "0 4px 15px rgba(15, 23, 42, 0.04)",
+                  width: "58px",
+                  height: "58px",
+                  borderRadius: "16px",
+                  background: "#eff6ff",
+                  color: "#0645E5",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: 800,
+                  fontSize: "18px",
+                  marginBottom: "22px",
                 }}
               >
-                <div
-                  style={{
-                    width: "58px",
-                    height: "58px",
-                    borderRadius: "16px",
-                    background: "#eff6ff",
-                    color: "#2563eb",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontWeight: 800,
-                    fontSize: "18px",
-                    marginBottom: "22px",
-                  }}
-                >
-                  {item.level}
-                </div>
-
-                <h2
-                  style={{
-                    color: "#13294b",
-                    fontSize: "24px",
-                    margin: "0 0 12px",
-                    fontWeight: 800,
-                  }}
-                >
-                  {item.title}
-                </h2>
-
-                <p
-                  style={{
-                    color: "#64748b",
-                    fontSize: "14px",
-                    lineHeight: 1.7,
-                    margin: "0 0 22px",
-                  }}
-                >
-                  {item.description}
-                </p>
-
-                <div
-                  style={{
-                    color: "#2563eb",
-                    fontWeight: 700,
-                    fontSize: "14px",
-                  }}
-                >
-                  Explore Level &rarr;
-                </div>
+                {item.level}
               </div>
-            </Link>
+
+              <h2
+                style={{
+                  color: "#13294b",
+                  fontSize: "24px",
+                  margin: "0 0 12px",
+                  fontWeight: 800,
+                }}
+              >
+                {item.title}
+              </h2>
+
+              <p
+                style={{
+                  color: "#64748b",
+                  fontSize: "14px",
+                  lineHeight: 1.7,
+                  margin: "0 0 22px",
+                }}
+              >
+                {item.description}
+              </p>
+
+              <ExploreButton
+                text="Explore Level"
+                href={item.href}
+              />
+            </div>
           ))}
         </div>
 
