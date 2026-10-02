@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import LessonNavigation from "@/app/components/LessonNavigation";
 
 const practice = [
   {
@@ -53,28 +53,11 @@ export default function ThereIsThereArePage() {
           margin: "0 auto",
         }}
       >
-        {/* Back */}
-        <div style={{ marginBottom: "30px" }}>
-          <Link
-            href="/resources/grammar/a1"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: "10px 16px",
-              borderRadius: "10px",
-              background: "#ffffff",
-              border: "1px solid #e5e7eb",
-              color: "#173b78",
-              textDecoration: "none",
-              fontSize: "14px",
-              fontWeight: 600,
-              boxShadow: "0 4px 12px rgba(0,0,0,0.04)",
-            }}
-          >
-            ← Back to A1 Grammar
-          </Link>
-        </div>
+        <LessonNavigation
+  currentSlug="there-is-there-are"
+  backLabel="Back to A1 Grammar"
+  backHref="/resources/grammar/a1"
+/>
 
         {/* Hero */}
         <section
@@ -741,34 +724,11 @@ export default function ThereIsThereArePage() {
           </div>
         </section>
 
-        {/* Bottom navigation */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            gap: "12px",
-            flexWrap: "wrap",
-          }}
-        >
-          <Link
-            href="/resources/grammar/a1"
-            style={navButtonStyle}
-          >
-            ← A1 Grammar
-          </Link>
-
-          <Link
-            href="/resources/grammar/a1/present-simple"
-            style={{
-              ...navButtonStyle,
-              background: "#173b78",
-              color: "#ffffff",
-              borderColor: "#173b78",
-            }}
-          >
-            Next: Present Simple →
-          </Link>
-        </div>
+  <LessonNavigation
+  currentSlug="there-is-there-are"
+  backLabel="Back to A1 Grammar"
+  backHref="/resources/grammar/a1"
+/>
       </div>
     </main>
   );
@@ -1003,15 +963,3 @@ const cellStyle: React.CSSProperties = {
   fontSize: "15px",
 };
 
-const navButtonStyle: React.CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  padding: "11px 18px",
-  borderRadius: "10px",
-  background: "#ffffff",
-  border: "1px solid #e5e7eb",
-  color: "#173b78",
-  textDecoration: "none",
-  fontSize: "14px",
-  fontWeight: 600,
-};

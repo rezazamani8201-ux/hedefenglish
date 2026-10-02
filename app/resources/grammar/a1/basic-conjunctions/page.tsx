@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import LessonNavigation from "@/app/components/LessonNavigation";
 
 const practice = [
   {
@@ -53,28 +54,11 @@ export default function BasicConjunctionsPage() {
           margin: "0 auto",
         }}
       >
-        {/* Back */}
-        <div style={{ marginBottom: "30px" }}>
-          <Link
-            href="/resources/grammar/a1"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: "10px 16px",
-              borderRadius: "10px",
-              background: "#ffffff",
-              border: "1px solid #e5e7eb",
-              color: "#173b78",
-              textDecoration: "none",
-              fontSize: "14px",
-              fontWeight: 600,
-              boxShadow: "0 4px 12px rgba(0,0,0,0.04)",
-            }}
-          >
-            ← Back to A1 Grammar
-          </Link>
-        </div>
+       <LessonNavigation
+  currentSlug="basic-conjunctions"
+  backLabel="Back to A1 Grammar"
+  backHref="/resources/grammar/a1"
+hideNextWhenLast={true}/>
 
         {/* Hero */}
         <section
@@ -618,31 +602,11 @@ export default function BasicConjunctionsPage() {
           </p>
         </section>
 
-        {/* Bottom navigation */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            gap: "12px",
-            flexWrap: "wrap",
-          }}
-        >
-          <Link href="/resources/grammar/a1/question-words" style={navButtonStyle}>
-            ← Question Words
-          </Link>
-
-          <Link
-            href="/resources/grammar/a1"
-            style={{
-              ...navButtonStyle,
-              background: "#173b78",
-              color: "#ffffff",
-              borderColor: "#173b78",
-            }}
-          >
-            Back to A1 Grammar
-          </Link>
-        </div>
+        <LessonNavigation
+  currentSlug="basic-conjunctions"
+  backLabel="Back to A1 Grammar"
+  backHref="/resources/grammar/a1"
+hideNextWhenLast={true}/>
       </div>
     </main>
   );

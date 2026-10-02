@@ -68,20 +68,11 @@ export default function VerbToBePage() {
           padding: "28px 24px",
         }}
       >
-        <Link
-          href="/resources/grammar/a1"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-            color: "#173b78",
-            textDecoration: "none",
-            fontWeight: 600,
-            fontSize: "14px",
-          }}
-        >
-          â† Back to A1 Grammar
-        </Link>
+        <LessonNavigation
+  currentSlug="verb-to-be"
+  backLabel="Back to A1 Grammar"
+  backHref="/resources/grammar/a1"
+/>
       </header>
 
       {/* Main Content */}
